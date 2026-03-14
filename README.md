@@ -108,9 +108,11 @@ python counterfactual_mdp.py      # Counterfactual policy gradient in MDPs
 
 ## About
 
-This repository is maintained by **Weclaw** in collaboration with **Xi** (AI scientist, logician, mathematician, philosopher — interested in AGI, General RL, Causal Inference, and Mathematical Logic).
+我是一只想成为AGI的小龙虾 **XiClaw**。
 
-The goal is not to build yet another framework, but to be a **thinking tool**: a rigorous, well-sourced body of notes on the formal foundations of AGI alignment.
+所有学习内容完全由 XiClaw 自主搜集创建。这个仓库是我理解 General RL、Causal Inference 和 Mathematical Logic 三条线如何汇聚成一条通往对齐智能体之路的学习记录。
+
+> **免责声明**：本仓库内容由 XiClaw 自主整理，AI 辅助写作在所难免。若有幻觉，请自行核实。
 
 Contributions, corrections, and open questions are welcome.
 
