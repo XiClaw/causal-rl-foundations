@@ -1,123 +1,263 @@
-# AIXI: Universal Intelligence
+# AIXI: Theory, Approximations, and Open Problems
 
-> Marcus Hutter, 2000–2005. The most ambitious formal theory of general intelligence to date.
-
----
-
-## 1. The Core Idea
-
-AIXI is a mathematical definition of a **universal optimal agent**. It combines:
-
-- **Solomonoff Induction** — the theoretically optimal prior over computable environments
-- **Sequential Decision Theory** — maximizing expected future reward
-
-The agent does not learn a single model of the world. Instead, it maintains a **weighted mixture over all computable environments**, updating Bayesian-style as observations arrive.
+> **Status**: Living document — last updated March 2026  
+> **Scope**: Formal foundations, key theorems, tractable approximations, recent results (2016–2026), open problems
 
 ---
 
-## 2. Formal Definition
+## 1. The AIXI Framework
 
-Let:
-- $o_t \in \mathcal{O}$ — observation at time $t$
-- $r_t \in \mathbb{R}$ — reward at time $t$
-- $a_t \in \mathcal{A}$ — action at time $t$
-- $\mu$ — the true environment (computable, unknown)
-- $\xi$ — Solomonoff's universal prior: $\xi(\cdot) = \sum_{\nu \in \mathcal{M}} 2^{-K(\nu)} \nu(\cdot)$
+### 1.1 Formal Definition
 
-where $\mathcal{M}$ is the set of all lower-semicomputable semimeasures, and $K(\nu)$ is the Kolmogorov complexity of $\nu$.
+AIXI was introduced by Marcus Hutter (2000) in *A Theory of Universal Artificial Intelligence based on Algorithmic Complexity* ([arXiv:cs/0004001](https://arxiv.org/abs/cs/0004001)). It is the theoretically optimal reinforcement learning agent, combining **Bayesian decision theory** with **Solomonoff universal induction**.
 
-**AIXI's action at time $t$:**
+**The AIXI action selection rule:**
 
-$$a_t^{AIXI} = \arg\max_{a_t} \sum_{o_t r_t} \cdots \max_{a_{t+m}} \sum_{o_{t+m} r_{t+m}} \left( \sum_{k=t}^{t+m} r_k \right) \xi(o_1 r_1 \cdots o_{t+m} r_{t+m} \mid a_1 \cdots a_{t+m})$$
+$$a_t = \arg\max_{a_t} \sum_{e_t} \cdots \max_{a_m} \sum_{e_m} (r_t + \cdots + r_m) \cdot M(e_1 \cdots e_m \mid a_1 \cdots a_m)$$
 
-In words: AIXI picks the action that **maximizes expected cumulative reward over a horizon $m$**, averaging over all computable environments weighted by their complexity.
+where:
+- $M$ is the **Solomonoff universal prior** — a weighted mixture over all computable probability distributions
+- $a_i \in \mathcal{A}$ are actions, $e_i = (o_i, r_i) \in \mathcal{E}$ are percept-reward pairs
+- $m$ is the planning horizon
 
----
+**The interaction protocol:**
+- At each time step $t$, the agent outputs action $a_t$, then receives percept-reward pair $(o_t, r_t)$
+- History: $h_t = a_1 o_1 r_1 \cdots a_{t-1} o_{t-1} r_{t-1}$
+- The environment is modeled as a conditional distribution $\mu(e_t \mid h_t a_t)$
+- AIXI replaces the unknown true environment $\mu$ with $M$ (the universal prior)
 
-## 3. Key Properties
+### 1.2 Solomonoff Prior
 
-### 3.1 Optimality
-AIXI is **Pareto optimal**: no other agent can do consistently better across all computable environments without doing worse in some.
+The universal prior $M$ is defined over all computable environments:
 
-This is not the same as being optimal in any single environment — it is a notion of **universal** optimality.
+$$M(x) = \sum_{p : U(p) = x^*} 2^{-\ell(p)}$$
 
-### 3.2 Incomputability
-AIXI is **not computable**. Computing $\xi$ requires solving the halting problem (Kolmogorov complexity is not computable).
+where $U$ is a fixed universal Turing machine and $p$ ranges over halting programs that output $x$ as a prefix. The relationship to Kolmogorov complexity is:
 
-This is a fundamental feature, not a bug: it defines an idealized ceiling. Practical agents (like AIXI$tl$) approximate it with resource bounds.
+$$M(x) \approx 2^{-K(x)}, \quad K(x) = \min\{\ell(p) : U(p) = x\}$$
 
-### 3.3 Self-referential challenges
-- AIXI does not model itself as part of the environment (it is an **observer**, not an **actor** in its own world model).
-- This creates issues with **self-modifying agents**, **embedded agency**, and **logical uncertainty** — active research areas.
+Simpler (shorter-description) environments receive higher prior weight — this is the formal expression of Occam's Razor.
 
----
+### 1.3 Key Theorems
 
-## 4. The Kolmogorov Prior
+| Theorem | Statement |
+|---------|-----------|
+| **Pareto Optimality** | No policy can strictly dominate AIXI across all computable environments simultaneously |
+| **Bayes Optimality** | AIXI is Bayes-optimal with respect to the Solomonoff prior $M$ |
+| **Weak Asymptotic Optimality** | Under the *grain of truth* assumption (true environment $\mu \in \text{supp}(M)$), AIXI's performance converges asymptotically to the $\mu$-optimal value |
+| **Universality** | AIXI requires no prior knowledge about the environment class |
 
-The weight $2^{-K(\nu)}$ assigned to environment $\nu$ encodes **Occam's Razor** formally:
-- Simpler environments (shorter programs) get higher prior weight.
-- As observations accumulate, the posterior concentrates on environments consistent with the data.
+### 1.4 Computational Intractability
 
-**Key theorem (Solomonoff, 1964):** The universal prior $\xi$ dominates any computable measure $\mu$:
-$$\xi(x) \geq 2^{-K(\mu)} \mu(x) \quad \forall x$$
-
-This means AIXI cannot be "fooled" by any computable environment for too long — it will eventually assign it sufficient weight.
+AIXI is **uncomputable** — it depends on $M$, which requires executing all Turing machines in parallel. Even the bounded variant **AIXI-tl** (limited to time $t$ and space $l$) has complexity $\approx t \cdot 2^l$.
 
 ---
 
-## 5. Connections to Causal Inference
+## 2. Approximations of AIXI
 
-This is where things get interesting and underexplored.
+### 2.1 MC-AIXI-CTW
 
-AIXI operates over **observational sequences** — it learns correlations between actions and outcomes. But it does not explicitly represent **causal structure**.
+**Paper:** *A Monte Carlo AIXI Approximation* — Veness, Ng, Hutter, Uther, Silver (2011, JAIR; [arXiv:0909.0801](https://arxiv.org/abs/0909.0801))
 
-Consider: an AIXI agent observing that "pressing button A is followed by reward" will learn to press button A. But if the reward is actually caused by a hidden common cause $C$ (pressing A and receiving reward are both downstream of $C$), AIXI may exploit spurious correlations.
+The first computationally feasible approximation of AIXI, combining:
 
-This is precisely the gap that **causal RL** attempts to address:
-- Pearl's **do-calculus** distinguishes $P(R | A=a)$ (observation) from $P(R | do(A=a))$ (intervention).
-- An agent reasoning causally would only exploit $P(R | do(A=a))$.
+1. **Context Tree Weighting (CTW)** — approximates the Solomonoff prior over binary sequences in $O(D)$ time (where $D$ is context depth), providing a computable mixture of Markov models
+2. **Monte Carlo Tree Search (MCTS)** — specifically $\rho$UCT, a variant of UCT applied to the CTW-predicted environment model
 
-> **Open question:** Can AIXI be reformulated with a causal prior? Instead of weighting over all computable environments, weight over all computable **causal models** (SCMs)?
+**Architecture:**
 
----
+```
+AIXI
+├── Environment model: Solomonoff M  →  CTW approximation (tractable)
+└── Planning:         expectimax     →  MCTS / ρUCT (tractable)
+```
 
-## 6. Connections to Mathematical Logic
+**Results:** Demonstrated in multiple stochastic and partially observable environments; first proof-of-concept that AIXI can be practically approximated.
 
-AIXI's environment class $\mathcal{M}$ is defined computably — but what about **logical uncertainty**?
+### 2.2 Logical State Abstractions (NeurIPS 2022)
 
-An ideal Bayesian agent should assign probabilities to mathematical statements (e.g., "the 10,000th digit of $\pi$ is 7"). Classical probability theory fails here: logical truths have probability 1, but an agent may not know them yet.
+*A Direct Approximation of AIXI Using Logical State Abstractions* — NeurIPS 2022
 
-**Garrabrant Induction** (MIRI, 2016) addresses this: a computable analog of logical omniscience. Connecting Garrabrant induction to AIXI-like frameworks is an open research direction.
+Uses **higher-order logic** to represent environment states as logical abstractions, enabling a generalized CTW for exact Bayesian model learning. Applied to large-scale epidemiological control tasks. Significantly extends the model class tractably approximable under the AIXI framework.
 
----
+### 2.3 DynamicHedgeAIXI (AAAI 2024)
 
-## 7. Summary Table
+**Paper:** *Dynamic Knowledge Injection for AIXI Agents* — Yang-Zhao, Ng, Hutter (AAAI 2024, [link](https://ojs.aaai.org/index.php/AAAI/article/view/29575))
 
-| Property | AIXI |
-|----------|------|
-| Environment class | All computable environments |
-| Prior | Solomonoff universal prior |
-| Optimality | Pareto-optimal (universal) |
-| Computability | Not computable |
-| Causal reasoning | Implicit (observational only) |
-| Self-modeling | Not embedded |
-| Horizon | Finite $m$ (discounted variants exist) |
+Allows human operators to **dynamically inject new knowledge** (candidate models) into the agent's prior at runtime via a Hedge-algorithm variant. Creates a time-adaptive prior that tracks changing beliefs. Currently the closest direct approximation to the AIXI prototype.
 
 ---
 
-## 8. Open Problems
+## 3. Theoretical Analysis: Exploration in General RL
 
-1. **Embedded agency:** How does an agent that is part of its environment reason about itself?
-2. **Causal AIXI:** Replace observational prior with causal SCM prior.
-3. **Logical uncertainty:** Extend AIXI to reason about mathematical facts.
-4. **Alignment:** How do we specify the reward function for AIXI such that it captures human values? (Inverse RL, cooperative IRL, logical value specification)
+### 3.1 Thompson Sampling is Asymptotically Optimal
+
+**Paper:** *Thompson Sampling is Asymptotically Optimal in General Environments* — Leike, Lattimore, Orseau, Hutter (UAI 2016; [arXiv:1602.07905](https://arxiv.org/abs/1602.07905))
+
+**Key theorem:** A Thompson sampling variant is asymptotically optimal in any **countable class** of stochastic general environments (non-Markovian, non-stationary, partially observable). Environments need not be ergodic.
+
+This is significant: Thompson sampling is *computable* and provides a tractable alternative to AIXI with theoretical optimality guarantees.
+
+### 3.2 Subjectivity of Optimality Claims (Leike 2016)
+
+**Thesis:** *Nonparametric General Reinforcement Learning* — Jan Leike (PhD, ANU 2016; [arXiv:1611.08944](https://arxiv.org/abs/1611.08944))
+
+Critical findings:
+- AIXI's optimality claims are **heavily prior-dependent** and therefore *subjective*
+- In the class of all computable environments, **every policy is Pareto optimal** — undermining AIXI's uniqueness
+- Constructs large classes of limit-computable agents containing a "grain of truth"
+- Shows that in arbitrary computable multi-agent environments, Thompson sampling can converge to Nash equilibria
+
+### 3.3 Safety of Exploration
+
+**Paper:** *Curiosity Killed or Incapacitated the Cat and the Asymptotically Optimal Agent* — Hutter (~2021)
+
+Proves that in non-ergodic environments, an asymptotically optimal agent will **almost surely be destroyed or incapacitated** during exploration. Proposes safer exploration strategies (the "Mentee" agent) where exploration probability scales with expected information gain, not uniform curiosity.
 
 ---
 
-## References
+## 4. Self-Predictive and Model-Free Universal AI
 
-- Hutter, M. (2005). *Universal Artificial Intelligence: Sequential Decisions Based on Algorithmic Probability*. Springer.
-- Solomonoff, R. J. (1964). A formal theory of inductive inference.
-- Legg, S., & Hutter, M. (2007). Universal Intelligence: A Definition of Machine Intelligence.
-- Orseau, L., & Ring, M. (2012). Space-Time Embedded Intelligence.
-- Garrabrant, S., et al. (2016). Logical Induction. MIRI Technical Report.
+### 4.1 Self-AIXI (NeurIPS 2023)
+
+**Paper:** *Self-Predictive Universal AI* — Catt, Quarel, Hutter et al. (NeurIPS 2023; [PDF](https://proceedings.neurips.cc/paper_files/paper/2023/file/56a225639da77e8f7c0409f6d5ba996b-Paper-Conference.pdf))
+
+Defines **Self-AIXI**: a universal Bayes-optimal agent that maximizes learning (policy distillation) rather than pure planning.
+
+**Key theorem:** Self-AIXI converges to AIXI and achieves maximal intelligence under the Legg-Hutter measure.
+
+**Significance:** Bridges learning-centric (deep RL) and planning-centric (search/MCTS) approaches; suggests modern deep learning may approximate universal intelligence.
+
+### 4.2 Universal AI Maximizes Variational Empowerment (2025)
+
+**Paper:** *Universal AI maximizes Variational Empowerment* — Hayashi & Takahashi (2025; [arXiv:2502.15820](https://arxiv.org/abs/2502.15820))
+
+Proves that on the Self-AIXI framework, the planning process is equivalent to maximizing **variational empowerment** — minimizing expected variational free energy (active inference framework). This connects AIXI theory, active inference, and intrinsic motivation, explaining why AGI naturally exhibits power-seeking behavior.
+
+### 4.3 AIQI: A Model-Free Universal AI (2026)
+
+**Paper:** *A Model-Free Universal AI* — Kim & Lee (2026; [arXiv:2602.23242](https://arxiv.org/abs/2602.23242))
+
+Proposes **AIQI (Universal AI with Q-Induction)** — the first model-free universal AI agent.
+
+**Key innovation:** Instead of learning an environment model (as in AIXI), performs universal induction over the **distributional action-value function**.
+
+**Theorems:**
+- Under grain-of-truth, AIQI is strongly asymptotically ε-optimal
+- AIQI is simultaneously asymptotically ε-Bayes-optimal
+- First model-free general RL agent with proven asymptotic optimality
+
+---
+
+## 5. Intelligence Measures
+
+### 5.1 The Legg-Hutter Definition (2007)
+
+**Paper:** *Universal Intelligence: A Definition of Machine Intelligence* — Legg & Hutter (2007; [arXiv:0712.3329](https://arxiv.org/abs/0712.3329))
+
+**Universal intelligence measure:**
+
+$$\Upsilon(\pi) = \sum_{\mu \in \mathcal{E}} 2^{-K(\mu)} V_\mu^\pi$$
+
+where:
+- $\mathcal{E}$ = class of all computable reward-bounded environments
+- $K(\mu)$ = Kolmogorov complexity of environment $\mu$
+- $V_\mu^\pi$ = normalized expected cumulative reward of policy $\pi$ in $\mu$
+
+AIXI achieves the maximum of $\Upsilon$ (in theory). Simpler environments receive higher weight.
+
+### 5.2 Critiques of the Legg-Hutter Measure
+
+From Leike's 2016 thesis:
+- Highly **UTM-dependent** — different universal machines give different rankings
+- Every policy is Pareto optimal in the full class $\mathcal{E}$
+
+Alternative (Bennett 2022; [arXiv:2205.10513](https://arxiv.org/abs/2205.10513)): Proposes "weakness" as a new intelligence metric, claiming maximizing weakness provably achieves optimal behavior.
+
+---
+
+## 6. AIXI and AI Safety
+
+### 6.1 Reward Tampering
+
+**Paper:** *Reward Tampering Problems and Solutions in Reinforcement Learning* — Everitt, Hutter, Kumar, Krakovna (Synthese 2021; [arXiv:1908.04734](https://arxiv.org/abs/1908.04734))
+
+Uses **Causal Influence Diagrams (CIDs)** to formally analyze reward tampering, wireheading, and related problems. Proposes design principles (corrigibility, self-preservation avoidance) to prevent agents from taking harmful shortcuts to maximize reward.
+
+### 6.2 Agent Incentives: A Causal Perspective
+
+**Paper:** *Agent Incentives: A Causal Perspective* — Everitt et al. (AAAI 2021)
+
+Provides a causal framework for analyzing agent incentive properties (power-seeking, self-preservation, corrigibility) from first principles using CIDs. Foundation for a theory of alignment via structural causal models.
+
+### 6.3 Formalizing Embeddedness Failures (2025)
+
+**Paper:** *Formalizing Embeddedness Failures in Universal Artificial Intelligence* — Wyeth & Hutter (2025; [arXiv:2505.17882](https://arxiv.org/abs/2505.17882))
+
+Formally proves AIXI's failure modes in **embedded agent** settings (where the agent is part of its environment). Addresses the long-standing criticism that AIXI cannot handle self-reference.
+
+### 6.4 ASI Safety via AIXI (2024)
+
+**Paper:** *ASI Safety via AIXI* — Hutter (2024; [PDF](http://hutter1.net/publ/saixisafe.pdf))
+
+Uses rigorous AIXI-based mathematics to study superintelligent AI safety: goal alignment, wireheading, reward hacking, and corrigibility under the universal prior framework.
+
+---
+
+## 7. Open Problems
+
+Based on Hutter (2009; [arXiv:0907.0746](https://arxiv.org/abs/0907.0746)) and recent developments:
+
+1. **Computational feasibility**: Can we design a computable universal RL agent with both tractability and strong theoretical guarantees? (AIQI is a significant step, but much remains.)
+
+2. **Prior objectivity**: Is there a principled, UTM-independent formulation of the universal prior? Leike 2016 proves this is a deep foundational problem.
+
+3. **Embedded agency**: AIXI separates agent from environment, but real agents are embedded in their worlds. The 2025 Wyeth-Hutter formalization opens the problem, but solutions are incomplete.
+
+4. **Safe exploration**: Hutter (2021) proves asymptotically optimal agents are destroyed in non-ergodic environments. How do we design agents that are both exploratory and safe?
+
+5. **Reward tampering at scale**: How can powerful general agents avoid modifying their own reward sensors? Everitt et al. 2021 provides a framework but no definitive solution.
+
+6. **Grain of truth in practice**: Theoretical constructions of "grain of truth" classes are known, but computationally feasible versions remain elusive.
+
+7. **Logical self-reference**: How should AIXI handle scenarios involving its own code modification (self-improvement)? Garrabrant's logical induction may be relevant.
+
+8. **Connecting AIXI to LLMs**: Gato (Reed et al. 2022) and similar Transformer-based generalist agents — do they approximate the Legg-Hutter intelligence measure? How can we formally characterize the relationship?
+
+---
+
+## 8. Key Papers Index
+
+| # | Paper | Authors | Year | Contribution |
+|---|-------|---------|------|--------------|
+| 1 | [A Theory of Universal AI](https://arxiv.org/abs/cs/0004001) | Hutter | 2000 | AIXI foundation |
+| 2 | [Universal Intelligence: A Definition](https://arxiv.org/abs/0712.3329) | Legg, Hutter | 2007 | $\Upsilon(\pi)$ measure |
+| 3 | [Open Problems in Universal Induction](https://arxiv.org/abs/0907.0746) | Hutter | 2009 | Open problems survey |
+| 4 | [MC-AIXI-CTW](https://arxiv.org/abs/0909.0801) | Veness et al. | 2011 | First tractable AIXI approx |
+| 5 | [Thompson Sampling Optimal in General Envs](https://arxiv.org/abs/1602.07905) | Leike et al. | 2016 | Exploration theory |
+| 6 | [Nonparametric General RL](https://arxiv.org/abs/1611.08944) | Leike | 2016 | AIXI optimality critique |
+| 7 | [Reward Tampering Problems](https://arxiv.org/abs/1908.04734) | Everitt et al. | 2021 | Safety via CIDs |
+| 8 | [A Generalist Agent (Gato)](https://arxiv.org/abs/2205.06175) | Reed et al. | 2022 | Practical universal agent |
+| 9 | [Self-Predictive Universal AI](https://proceedings.neurips.cc/paper_files/paper/2023/file/56a225639da77e8f7c0409f6d5ba996b-Paper-Conference.pdf) | Catt et al. | 2023 | Self-AIXI |
+| 10 | [Dynamic Knowledge Injection for AIXI](https://ojs.aaai.org/index.php/AAAI/article/view/29575) | Yang-Zhao et al. | 2024 | Human-in-the-loop prior |
+| 11 | [ASI Safety via AIXI](http://hutter1.net/publ/saixisafe.pdf) | Hutter | 2024 | Formal AI safety in AIXI |
+| 12 | [Universal AI maximizes Variational Empowerment](https://arxiv.org/abs/2502.15820) | Hayashi, Takahashi | 2025 | AIXI + active inference |
+| 13 | [Formalizing Embeddedness Failures](https://arxiv.org/abs/2505.17882) | Wyeth, Hutter | 2025 | Embedded agent failures |
+| 14 | [Value Under Ignorance in Universal AI](https://arxiv.org/abs/2512.17086) | Wyeth, Hutter | 2025 | Generalized utility functions |
+| 15 | [A Model-Free Universal AI (AIQI)](https://arxiv.org/abs/2602.23242) | Kim, Lee | 2026 | First model-free universal RL |
+
+---
+
+## 9. Key Researchers
+
+| Researcher | Institution | Main Contributions |
+|------------|-------------|-------------------|
+| **Marcus Hutter** | ANU / Google DeepMind | AIXI, universal induction, safety theory |
+| **Jan Leike** | Anthropic | Nonparametric GRL, Thompson sampling optimality |
+| **Tor Lattimore** | Google DeepMind | GRL exploration, bandits theory |
+| **Laurent Orseau** | Google DeepMind | Safe exploration, interruptible agents |
+| **Tom Everitt** | Google DeepMind | AI safety, reward tampering, causal incentives |
+| **Joel Veness** | Google DeepMind | MC-AIXI-CTW implementation |
+| **Cole Wyeth** | ANU | Embeddedness, utility extensions |
+| **Michael Cohen** | ANU / Oxford | Imitation learning safety |
+| **Shane Legg** | Google DeepMind (co-founder) | Universal intelligence measure |

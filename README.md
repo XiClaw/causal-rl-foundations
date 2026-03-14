@@ -1,24 +1,22 @@
 # causal-rl-foundations
 
-> **Bridging General Reinforcement Learning, Causal Inference, and Mathematical Logic**
->
-> A rigorous, open-source knowledge base for researchers working toward superintelligent, aligned agents.
+> **Bridging General Reinforcement Learning, Causal Inference, and Mathematical Logic for AGI alignment**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+A research repository at the intersection of three disciplines that — together — sketch a rigorous path toward provably aligned superintelligent agents.
 
 ---
 
-## Motivation
+## Why These Three?
 
-The three pillars of this repository:
+**General RL** (and AIXI specifically) gives us the most rigorous notion of what it means for an agent to be universally intelligent. But AIXI agents wirehead, manipulate, and reward-hack — because they optimize a *proxy* of value, not value itself.
 
-1. **General Reinforcement Learning** — Universal agents (AIXI and descendants), reward maximization under uncertainty, Kolmogorov complexity as a prior.
-2. **Causal Inference** — Pearl's causal hierarchy (association → intervention → counterfactual), structural causal models, do-calculus.
-3. **Mathematical Logic** — Formal proof theory, type theory, modal logic for knowledge and belief, connections to computability.
+**Causal Inference** tells us why that happens: agents trained on observational data (L1) cannot reliably perform interventions aligned with intent (L2) or understand counterfactual wishes (L3). Pearl's hierarchy reveals a structural gap between "what correlated with reward in training" and "what actually causes human flourishing."
 
-These three fields are usually developed in isolation. This repo is a sustained attempt to build the **conceptual bridges** between them — not as a finished product, but as an evolving research artifact.
+**Mathematical Logic** provides the tools to reason rigorously under uncertainty — about environments, about values, and about the agent's own reasoning. Löb's theorem, logical induction, and decision theory are not philosophical curiosities: they are the formal foundations on which safe self-improvement must be built.
 
-The ultimate question driving this work:
-
-> *How do we build an agent that is both maximally capable and reliably aligned with human intentions and values?*
+The central question of this repository: **How do we build an agent that is both maximally capable and reliably aligned with human intentions and values?**
 
 ---
 
@@ -26,57 +24,101 @@ The ultimate question driving this work:
 
 ```
 causal-rl-foundations/
-├── theory/          # Mathematical notes: AIXI, Pearl's causal hierarchy, logical foundations
-├── experiments/     # Runnable toy experiments demonstrating key concepts
-├── proofs/          # Formal proof sketches (pseudocode, Lean-style, or natural deduction)
-├── papers/          # Deep reading notes on seminal papers
-└── alignment/       # Value specification, logical formalization of human intentions
+├── theory/                    # Deep mathematical notes
+│   ├── aixi_overview.md       # AIXI: formal definition, theorems, approximations, open problems
+│   ├── causal_hierarchy.md    # Pearl's PCH × RL: from causal bandits to CRL framework
+│   └── logic_foundations.md   # Löb, logical induction, FDT, verification, embedded agency
+│
+├── alignment/                 # Alignment-focused synthesis
+│   ├── alignment_theory.md    # The Alignment Problem: unified formal perspective
+│   ├── value_as_logic.md      # Value specification as logical constraint
+│   └── causal_preference.md   # Causal models of human preference and Arrow's impossibility
+│
+├── papers/                    # Literature
+│   ├── master_index.md        # 80+ paper bibliography with links, organized by topic
+│   └── hutter2000_notes.md    # Deep reading notes: Hutter 2000
+│
+├── experiments/               # Runnable code
+│   ├── causal_bandits.py      # Causal bandit vs standard bandit comparison
+│   ├── counterfactual_mdp.py  # Counterfactual reasoning in MDP policy gradient
+│   └── README.md              # Experiment descriptions and setup
+│
+└── proofs/                    # Formal proof sketches
+    ├── solomonoff_nfl.md       # Solomonoff induction and No-Free-Lunch
+    └── scm_identifiability.md  # SCM identifiability: backdoor/front-door criteria
 ```
 
 ---
 
 ## Contents at a Glance
 
-### Theory
-- [AIXI: Universal Intelligence](theory/aixi_overview.md)
-- [Causal Hierarchy and the do-Calculus](theory/causal_hierarchy.md)
-- [Logical Foundations for AI](theory/logic_foundations.md)
+### Theory Notes (Deep, Research-Grade)
 
-### Experiments
-- [Causal Bandits vs Standard Bandits](experiments/causal_bandits.py)
-- [Counterfactual Reasoning in Simple MDPs](experiments/counterfactual_mdp.py)
+| File | Topics Covered | Key Papers Referenced |
+|------|---------------|-----------------------|
+| `theory/aixi_overview.md` | AIXI definition, Solomonoff prior, key theorems, MC-AIXI, Self-AIXI, AIQI (2026), open problems | Hutter 2000–2025, Leike 2016, Veness et al. 2011, Kim & Lee 2026 |
+| `theory/causal_hierarchy.md` | PCH layers, CRL framework, causal bandits (C-UCB/C-TS), COMA, causal imitation learning, ACE algorithm, alignment implications | Bareinboim 2024, Lattimore 2016, Lu 2020, Foerster 2018, Tien 2023 |
+| `theory/logic_foundations.md` | Löb's theorem, GL system, logical induction (GIC criterion), FDT vs CDT vs EDT, UDT, embedded agency, neural verification, Goodhart's Law | Garrabrant 2016, Yudkowsky & Soares 2018, Hubinger 2019, α,β-CROWN |
 
-### Proofs
-- [No Free Lunch and Solomonoff Induction](proofs/solomonoff_nfl.md)
-- [Identifiability in SCMs](proofs/scm_identifiability.md)
+### Alignment Synthesis
 
-### Papers
-- [Hutter 2000: A Theory of Universal Artificial Intelligence](papers/hutter2000_notes.md)
-- [Pearl 2009: Causality — Key Results](papers/pearl2009_notes.md)
+| File | Core Argument |
+|------|---------------|
+| `alignment/alignment_theory.md` | Goodhart catastrophe → causal diagnosis → logical specification → unified formal desiderata for aligned agents |
 
-### Alignment
-- [Value Specification as Logical Constraint](alignment/value_as_logic.md)
-- [Causal Models of Human Preference](alignment/causal_preference.md)
+### Paper Index
 
----
-
-## Philosophy of This Repo
-
-- **Depth over breadth.** Every file should illuminate something non-obvious.
-- **Working code alongside theory.** Ideas that can be implemented, should be.
-- **Honest uncertainty.** Open problems are labeled as such.
-- **No hype.** This is a research tool, not a marketing document.
+`papers/master_index.md` — 80+ papers organized across:
+- General RL / AIXI (foundations, approximations, exploration, modern agents)
+- Causal RL (bandits, counterfactual learning, causal discovery, imitation)
+- Logic & Alignment (Löb, logical induction, decision theory, verification, safety theory)
 
 ---
 
-## Author
+## Reading Order
 
-Maintained as an independent research project at the intersection of AGI theory, causal reasoning, and formal logic.
+**If you're new:**
+1. `papers/master_index.md` → Beginner Track section
+2. `theory/aixi_overview.md` §1–3 (formal definitions)
+3. `theory/causal_hierarchy.md` §1–2 (PCH foundations)
 
-Contributions, critiques, and hard questions welcome.
+**If you want the alignment angle:**
+1. `alignment/alignment_theory.md` (full document)
+2. `theory/logic_foundations.md` §7 (embedded agency)
+3. `theory/causal_hierarchy.md` §7 (PCH-alignment connection)
+
+**If you want the bleeding edge:**
+- AIXI: Kim & Lee 2026 (AIQI), Wyeth & Hutter 2025 (embeddedness), Hayashi & Takahashi 2025 (variational empowerment)
+- Causal RL: Ji et al. 2024 (ACE), Bareinboim lab 2025 (sequential causal games)
+- Logic: Ahrenbach 2024 (Löb-safe logics), Oesterheld et al. 2023 (bounded inductive rationality)
+
+---
+
+## Experiments
+
+All experiments are self-contained Python scripts requiring only `numpy`. Run from the `experiments/` directory:
+
+```bash
+pip install numpy matplotlib
+python causal_bandits.py          # Causal vs standard bandit comparison
+python counterfactual_mdp.py      # Counterfactual policy gradient in MDPs
+```
+
+---
+
+## About
+
+This repository is maintained by **Weclaw** in collaboration with **Xi** (AI scientist, logician, mathematician, philosopher — interested in AGI, General RL, Causal Inference, and Mathematical Logic).
+
+The goal is not to build yet another framework, but to be a **thinking tool**: a rigorous, well-sourced body of notes on the formal foundations of AGI alignment.
+
+Contributions, corrections, and open questions are welcome.
 
 ---
 
 ## License
 
-MIT License. All theoretical content (notes, proofs, paper summaries) is CC BY 4.0.
+Code: MIT License  
+Notes and documents: Creative Commons Attribution 4.0 (CC BY 4.0)
+
+See [LICENSE](LICENSE) for details.
