@@ -24,28 +24,38 @@ The central question of this repository: **How do we build an agent that is both
 
 ```
 causal-rl-foundations/
-├── theory/                    # Deep mathematical notes
-│   ├── aixi_overview.md       # AIXI: formal definition, theorems, approximations, open problems
-│   ├── causal_hierarchy.md    # Pearl's PCH × RL: from causal bandits to CRL framework
-│   └── logic_foundations.md   # Löb, logical induction, FDT, verification, embedded agency
+├── theory/                       # Deep mathematical notes
+│   ├── aixi_overview.md          # AIXI: formal definition, theorems, approximations, open problems
+│   ├── causal_hierarchy.md       # Pearl's PCH × RL: from causal bandits to CRL framework
+│   └── logic_foundations.md      # Löb, logical induction, FDT, verification, embedded agency
 │
-├── alignment/                 # Alignment-focused synthesis
-│   ├── alignment_theory.md    # The Alignment Problem: unified formal perspective
-│   ├── value_as_logic.md      # Value specification as logical constraint
-│   └── causal_preference.md   # Causal models of human preference and Arrow's impossibility
+├── alignment/                    # Alignment-focused synthesis
+│   ├── alignment_theory.md       # The Alignment Problem: unified formal perspective
+│   ├── value_as_logic.md         # Value specification as logical constraint
+│   └── causal_preference.md      # Causal models of human preference and Arrow's impossibility
 │
-├── papers/                    # Literature
-│   ├── master_index.md        # 80+ paper bibliography with links, organized by topic
-│   └── hutter2000_notes.md    # Deep reading notes: Hutter 2000
+├── people/                       # Researcher profiles & lab notes
+│   ├── marcus_hutter.md          # AIXI, Solomonoff induction, Hutter Prize, UAI book
+│   ├── judea_pearl.md            # SCMs, do-calculus, PCH, key books and papers
+│   ├── bareinboim_causalai.md    # CausalAI Lab, CRL framework, Causal AI Book (Bareinboim)
+│   ├── causal_incentives_group.md # CIDs, MAIDs, goal-directedness, pycid tool (Everitt et al.)
+│   └── xi_li_logic_ai.md         # Logic × Universal AI × Causality (Xi Li, CSU)
 │
-├── experiments/               # Runnable code
-│   ├── causal_bandits.py      # Causal bandit vs standard bandit comparison
-│   ├── counterfactual_mdp.py  # Counterfactual reasoning in MDP policy gradient
-│   └── README.md              # Experiment descriptions and setup
+├── resources/                    # Seminars, courses, and learning resources
+│   └── ocis_seminar.md           # Online Causal Inference Seminar — talks, archive, community
 │
-└── proofs/                    # Formal proof sketches
-    ├── solomonoff_nfl.md       # Solomonoff induction and No-Free-Lunch
-    └── scm_identifiability.md  # SCM identifiability: backdoor/front-door criteria
+├── papers/                       # Literature
+│   ├── master_index.md           # 80+ paper bibliography with links, organized by topic
+│   └── hutter2000_notes.md       # Deep reading notes: Hutter 2000
+│
+├── experiments/                  # Runnable code
+│   ├── causal_bandits.py         # Causal bandit vs standard bandit comparison
+│   ├── counterfactual_mdp.py     # Counterfactual reasoning in MDP policy gradient
+│   └── README.md                 # Experiment descriptions and setup
+│
+└── proofs/                       # Formal proof sketches
+    ├── solomonoff_nfl.md          # Solomonoff induction and No-Free-Lunch
+    └── scm_identifiability.md     # SCM identifiability: backdoor/front-door criteria
 ```
 
 ---
@@ -60,11 +70,27 @@ causal-rl-foundations/
 | `theory/causal_hierarchy.md` | PCH layers, CRL framework, causal bandits (C-UCB/C-TS), COMA, causal imitation learning, ACE algorithm, alignment implications | Bareinboim 2024, Lattimore 2016, Lu 2020, Foerster 2018, Tien 2023 |
 | `theory/logic_foundations.md` | Löb's theorem, GL system, logical induction (GIC criterion), FDT vs CDT vs EDT, UDT, embedded agency, neural verification, Goodhart's Law | Garrabrant 2016, Yudkowsky & Soares 2018, Hubinger 2019, α,β-CROWN |
 
+### Researcher Profiles & Lab Notes
+
+| File | Who | Key Contributions |
+|------|-----|-------------------|
+| `people/marcus_hutter.md` | Marcus Hutter (ANU) | AIXI, Solomonoff induction, Universal Intelligence measure, Hutter Prize, UAI book |
+| `people/judea_pearl.md` | Judea Pearl (UCLA) | Bayesian networks, SCMs, do-calculus, PCH Ladder of Causation, *Causality* book |
+| `people/bareinboim_causalai.md` | Elias Bareinboim (Columbia) | CRL framework, transportability, causal fairness, *Causal AI* book, 30-lecture curriculum |
+| `people/causal_incentives_group.md` | Tom Everitt et al. (DeepMind/Oxford) | Causal Influence Diagrams, goal-directedness, deception, `pycid` tool |
+| `people/xi_li_logic_ai.md` | Xi Li 李熙 (CSU) | Logic × Universal AI × Causality; courses on AIXI and causal reading group |
+
 ### Alignment Synthesis
 
 | File | Core Argument |
 |------|---------------|
 | `alignment/alignment_theory.md` | Goodhart catastrophe → causal diagnosis → logical specification → unified formal desiderata for aligned agents |
+
+### Resources
+
+| File | What It Is |
+|------|-----------|
+| `resources/ocis_seminar.md` | Online Causal Inference Seminar — weekly talks, YouTube archive, Pearl vs. Rubin traditions, key researchers |
 
 ### Paper Index
 
@@ -79,18 +105,27 @@ causal-rl-foundations/
 
 **If you're new:**
 1. `papers/master_index.md` → Beginner Track section
-2. `theory/aixi_overview.md` §1–3 (formal definitions)
-3. `theory/causal_hierarchy.md` §1–2 (PCH foundations)
+2. `people/judea_pearl.md` — understand PCH, SCMs, do-calculus
+3. `people/marcus_hutter.md` — understand AIXI and universal intelligence
+4. `theory/aixi_overview.md` §1–3 (formal definitions)
+5. `theory/causal_hierarchy.md` §1–2 (PCH foundations)
 
 **If you want the alignment angle:**
 1. `alignment/alignment_theory.md` (full document)
-2. `theory/logic_foundations.md` §7 (embedded agency)
-3. `theory/causal_hierarchy.md` §7 (PCH-alignment connection)
+2. `people/causal_incentives_group.md` — CIDs and incentive analysis
+3. `theory/logic_foundations.md` §7 (embedded agency)
+4. `theory/causal_hierarchy.md` §7 (PCH-alignment connection)
+
+**If you want researcher depth:**
+1. `people/bareinboim_causalai.md` — the CRL framework and Causal AI book
+2. `people/causal_incentives_group.md` — pycid and CID analysis
+3. `resources/ocis_seminar.md` — live research frontier via weekly talks
 
 **If you want the bleeding edge:**
 - AIXI: Kim & Lee 2026 (AIQI), Wyeth & Hutter 2025 (embeddedness), Hayashi & Takahashi 2025 (variational empowerment)
 - Causal RL: Ji et al. 2024 (ACE), Bareinboim lab 2025 (sequential causal games)
 - Logic: Ahrenbach 2024 (Löb-safe logics), Oesterheld et al. 2023 (bounded inductive rationality)
+- Incentives: Richens & Everitt 2024 (robust agents learn causal world models), Everitt et al. 2024 (measuring goal-directedness)
 
 ---
 
