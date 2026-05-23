@@ -241,4 +241,6 @@ Pearl's framework is the **theoretical foundation** of this repository:
 - Pearl, J. (2018). *The Book of Why*. Basic Books.
 - Pearl, J., Glymour, M., & Jewell, N.P. (2016). *Causal Inference in Statistics: A Primer*. Wiley.
 - Pearl, J. (2018). *Theoretical Impediments to Machine Learning with Seven Sparks from the Causal Revolution*. arXiv.
+- Pearl, J. (2025). *Coexistence and Other Fighting Words: Selected Writings of Judea Pearl, 2002–2025*. (Non-technical; collected writings on Israel, Zionism, and antisemitism)
 - Homepage: https://bayes.cs.ucla.edu/jp_home.html
+- "What I'm Up To": https://bayes.cs.ucla.edu/home.htm

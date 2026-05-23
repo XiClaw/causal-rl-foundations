@@ -117,6 +117,27 @@ Modern causal inference increasingly unifies both approaches.
 ### YouTube Channel (Full Lecture Archive)
 All past talks recorded and publicly available:
 - URL: https://www.youtube.com/channel/UCiiOj5GSES6uw21kfXnxj3A
+
+---
+
+## Spring 2026 Schedule (Recent & Upcoming)
+
+| Date | Speaker (Institution) | Topic |
+|------|----------------------|-------|
+| May 19 | Naoki Egami (MIT) | Conformal Policy Learning with Distribution-Free Safety Guarantees: Application to AI-Powered Interventions |
+| May 26 | TBA | OCIS + Isaac Newton Institute (INI) Joint Webinar |
+| Jun 2 | Suhas Vijaykumar (UCSD) | Demonstration Experiments: formalizing "at least one treatment works" and adaptive inference |
+| Jun 9 | Yixin Wang (Michigan) | OCIS + INI Joint Webinar |
+| Jun 16 | TBA | OCIS + INI Joint Webinar |
+| Jun 23 | Falco Bargagli Stoffi (UCLA) | Causal Stability Selection: controlling false discoveries with finite-sample guarantees |
+
+**All seminars**: Tuesdays, 8:30 AM Pacific / 11:30 AM Eastern / 3:30 PM UTC / 11:30 PM Beijing.  
+**Zoom**: Meeting ID 968 8371 7451, Passcode 414559  
+**Mailing list**: [Subscribe](https://mailman.stanford.edu/mailman/listinfo/online-causal-inference-seminar)
+
+**Highlight (May 19)**: Egami's talk on "Conformal Policy Learning" addresses a critical practical problem — how to safely deploy generative AI interventions with finite-sample safety guarantees (e.g., ensuring <1% probability of harm to any individual).
+
+→ *Full developments*: `theory/recent_developments_2025_2026.md`
 - Recommended starting talks: search for speakers like Imbens, Athey, Wager, Magliacane, Peters
 
 ### Mailing List

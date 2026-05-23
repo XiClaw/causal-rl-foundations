@@ -209,4 +209,23 @@ Based on Hutter's current publications:
 - Hutter, M. (2002). *The Fastest and Shortest Algorithm for All Well-Defined Problems*. IJFCS.
 - Legg, S. & Hutter, M. (2007). *Universal Intelligence: A Definition of Machine Intelligence*. Minds & Machines.
 - Veness, J., Ng, K.S., Hutter, M., et al. (2011). *A Monte-Carlo AIXI Approximation*. JAIR.
+- Wyeth, C. & Hutter, M. (2025a). *Value Under Ignorance in Universal Artificial Intelligence*. AGI 2025. arXiv:2512.17086.
+- Wyeth, C. & Hutter, M. (2025b). *Formalizing Embeddedness Failures in Universal Artificial Intelligence*. arXiv:2505.17882.
+- Kim, Y. & Lee, J. (2026). *A Model-Free Universal AI (AIQI)*. arXiv:2602.23242. (Related work; extends the AIXI lineage)
 - Hutter Prize: http://prize.hutter1.net/
+
+---
+
+## 2025–2026 Recent Developments
+
+**Cole Wyeth collaboration (2025)**:
+Wyeth & Hutter produced two significant papers in 2025:
+1. **Value Under Ignorance** (AGI 2025): Extends AIXI to general utility functions. Uses Choquet integrals from imprecise probability theory to handle the semimeasure loss ambiguity. Recovers standard value function as special case; proves most general death-interpretation cannot be characterized by Choquet integrals.
+2. **Formalizing Embeddedness Failures** (arXiv 2025): First rigorous formalization and proof that AIXI fails as an embedded agent. Addresses self-reference, Cartesian boundary, and infinite computation failures. Evaluates progress toward embedded agency theories.
+
+**AIQI (Kim & Lee, Feb 2026)**:
+While not directly co-authored by Hutter, AIQI (the first model-free universal AI agent) is a direct descendant of the AIXI research program. It performs universal induction over distributional Q-functions and proves asymptotic optimality without requiring an explicit environment model.
+
+**Current affiliation**: Hutter is now at Google DeepMind, continuing work at the intersection of universal AI theory, AI safety, and practical RL.
+
+→ *Full developments*: `theory/recent_developments_2025_2026.md`

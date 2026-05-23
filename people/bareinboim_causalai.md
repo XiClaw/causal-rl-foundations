@@ -177,6 +177,26 @@ The book *Causal Artificial Intelligence* is essentially a textbook for this rep
 | ⭐ | *Confounding Robust Deep RL* (NeurIPS 2025) | Practical confounding-robust RL |
 | ⭐ | *Counterfactual Realizability* (ICLR 2025) | Formal conditions for L3 queries |
 
+### 2026 Developments
+
+| Paper | Venue | Significance |
+|-------|-------|-------------|
+| Causal Identification from Counterfactual Data | ICML 2026 | Completeness and bounding results for identification from counterfactual data |
+| Causal Flow Q-Learning for Robust Offline RL | ICML 2026 | Addresses confounding bias in offline RL using flow-matching policies |
+| Relational Structural Causal Models | ICML 2026 | Extends SCMs to relational/structured domains |
+| Counterfactual Shapley Credit Assignment | RLC 2026 | Causal multi-agent credit assignment via Shapley values |
+| Scalable Causal Imitation Learning | RLC 2026 | Practical causal imitation learning at scale |
+
+### Major Milestones (2025–2026)
+
+- **AAAI Fellow**: Elected for "significant contributions to causal theory in AI and its applications"
+- **Editor-in-Chief**: Journal of Causal Inference (the field's dedicated top journal)
+- **$5M NSF Grant**: "AI Decision-Making" initiative — transforming decision-making through causal methods
+- **Causal AI Book**: Draft online at [causalai-book.net](https://causalai-book.net/) — comprehensive textbook systematizing the field
+- **Lab pipeline**: 14 active PhD students/postdocs; alumni placed at UCLA, UIUC, SNU, Google DeepMind, Amazon
+
+→ *Full developments*: `theory/recent_developments_2025_2026.md`
+
 ---
 
 ## References

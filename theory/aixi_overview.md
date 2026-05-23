@@ -1,6 +1,6 @@
 # AIXI: Theory, Approximations, and Open Problems
 
-> **Status**: Living document — last updated March 2026  
+> **Status**: Living document — last updated May 2026  
 > **Scope**: Formal foundations, key theorems, tractable approximations, recent results (2016–2026), open problems
 
 ---
@@ -134,18 +134,57 @@ Defines **Self-AIXI**: a universal Bayes-optimal agent that maximizes learning (
 
 Proves that on the Self-AIXI framework, the planning process is equivalent to maximizing **variational empowerment** — minimizing expected variational free energy (active inference framework). This connects AIXI theory, active inference, and intrinsic motivation, explaining why AGI naturally exhibits power-seeking behavior.
 
-### 4.3 AIQI: A Model-Free Universal AI (2026)
+### 4.3 AIQI: A Model-Free Universal AI (2026) ⭐
 
 **Paper:** *A Model-Free Universal AI* — Kim & Lee (2026; [arXiv:2602.23242](https://arxiv.org/abs/2602.23242))
 
-Proposes **AIQI (Universal AI with Q-Induction)** — the first model-free universal AI agent.
+Proposes **AIQI (Universal AI with Q-Induction)** — the **first model-free universal AI agent**. This is arguably the most significant theoretical advance in universal AI since AIXI itself.
 
-**Key innovation:** Instead of learning an environment model (as in AIXI), performs universal induction over the **distributional action-value function**.
+**Key innovation:** Instead of learning an environment model (as in AIXI), AIQI performs universal induction over the **distributional action-value function** $Z(s, a)$, which maps state-action pairs to return distributions. This is a fundamentally different inductive target:
+
+| Agent | Inductive Target | Model Required? |
+|-------|-----------------|-----------------|
+| AIXI | Environment distributions $\nu \in \mathcal{M}$ | Yes (explicit) |
+| AIQI | Distributional Q-functions | No (implicit) |
+
+**Core mechanism**: Mirrors Solomonoff induction but on Q-functions:
+1. Maintain a universal prior over all computable distributional Q-functions
+2. After observing history $h_t$, perform Bayesian update on Q-function posterior
+3. Select actions maximizing expected value under the posterior mixture
 
 **Theorems:**
-- Under grain-of-truth, AIQI is strongly asymptotically ε-optimal
-- AIQI is simultaneously asymptotically ε-Bayes-optimal
+- Under grain-of-truth, AIQI is **strongly asymptotically ε-optimal**
+- AIQI is simultaneously **asymptotically ε-Bayes-optimal**
 - First model-free general RL agent with proven asymptotic optimality
+
+**Significance:**
+- Breaks the long-held belief that "optimal agent → model-based" in general RL
+- Opens a new architectural direction for universal agent design
+- Connects universal AI theory to distributional RL (Bellemare et al. 2017, IQN, etc.)
+- Has alignment implications: model-free agents may be harder to inspect for safety properties
+
+**Open question**: Do the Wyeth-Hutter embeddedness failures (see §6.3) also apply to AIQI, or does the model-free approach circumvent some of them?
+
+→ *Full notes*: `papers/aiqi_notes.md`
+
+### 4.4 Value Under Ignorance: AIXI with General Utility Functions (2025)
+
+**Paper:** *Value Under Ignorance in Universal Artificial Intelligence* — Wyeth & Hutter (AGI 2025; [arXiv:2512.17086](https://arxiv.org/abs/2512.17086))
+
+Extends AIXI to admit a **wider class of utility functions** beyond the standard discounted sum. Addresses a fundamental ambiguity in the AIXI formalism: what happens when some hypotheses in the universal prior only predict finite history prefixes?
+
+**The semimeasure loss problem**: Solomonoff's $M$ is a semimeasure ($\sum_x M(x) \leq 1$, strict inequality possible). The "missing" probability mass has two natural interpretations:
+
+1. **Death interpretation**: the agent dies / the environment terminates
+2. **Ignorance interpretation**: the missing mass represents complete ignorance — we simply don't know what happens after
+
+**Technical approach**: Uses the **Choquet integral** from imprecise probability theory to compute expected utility under ignorance. Key results:
+
+- Standard recursive value function (geometric discount) recovered as a special case
+- Characterizes computability levels of the generalized expectation
+- Proves a **negative result**: the most general death-interpretation expectation **cannot** be characterized by Choquet integrals — exposing a fundamental limitation
+
+**Connection to alignment**: The choice between death vs. ignorance interpretation has implications for AI safety — an agent that treats uncertainty as "death" may behave very differently from one that treats it as "I don't know."
 
 ---
 
@@ -194,7 +233,22 @@ Provides a causal framework for analyzing agent incentive properties (power-seek
 
 **Paper:** *Formalizing Embeddedness Failures in Universal Artificial Intelligence* — Wyeth & Hutter (2025; [arXiv:2505.17882](https://arxiv.org/abs/2505.17882))
 
-Formally proves AIXI's failure modes in **embedded agent** settings (where the agent is part of its environment). Addresses the long-standing criticism that AIXI cannot handle self-reference.
+The **first rigorous formalization and proof** that AIXI fails as a model of **embedded agency**. This addresses a criticism that has been leveled at AIXI since its inception — that it assumes a Cartesian boundary between agent and environment that doesn't exist in reality.
+
+**Embeddedness failure modes formalized:**
+
+| Failure Mode | Description | Formal Result |
+|-------------|-------------|---------------|
+| **Self-reference** | Agent's computation affects the environment it models | Proof that AIXI-variant cannot consistently model joint action/percept histories |
+| **Cartesian boundary** | AIXI assumes clean agent/environment separation | Formal proof that this separation breaks under universal distribution |
+| **Infinite computation** | AIXI requires halting-oracle level computation ($\Delta^0_2$) | Computational hierarchy characterization |
+| **Predictive feedback** | Agent actions change the distribution, breaking passive prediction | Identified as structural limitation of the framework |
+
+**Methodology**: Focuses on a variant of AIXI that models the joint action/percept history as drawn from the universal distribution. Derives both "surprising positive and negative results" (per Wyeth on LessWrong).
+
+**Current status**: Evaluates progress toward embedded agency theories based on AIXI variants. The paper frames the problem rather than solving it — embedded agency remains open.
+
+**Key connection**: Does AIQI (model-free, §4.3) avoid some embeddedness failures? The fact that AIQI doesn't maintain an explicit environment model might help with the self-reference problem, but this is unproven.
 
 ### 6.4 ASI Safety via AIXI (2024)
 
@@ -244,7 +298,8 @@ Based on Hutter (2009; [arXiv:0907.0746](https://arxiv.org/abs/0907.0746)) and r
 | 12 | [Universal AI maximizes Variational Empowerment](https://arxiv.org/abs/2502.15820) | Hayashi, Takahashi | 2025 | AIXI + active inference |
 | 13 | [Formalizing Embeddedness Failures](https://arxiv.org/abs/2505.17882) | Wyeth, Hutter | 2025 | Embedded agent failures |
 | 14 | [Value Under Ignorance in Universal AI](https://arxiv.org/abs/2512.17086) | Wyeth, Hutter | 2025 | Generalized utility functions |
-| 15 | [A Model-Free Universal AI (AIQI)](https://arxiv.org/abs/2602.23242) | Kim, Lee | 2026 | First model-free universal RL |
+| 15 | [A Model-Free Universal AI (AIQI)](https://arxiv.org/abs/2602.23242) | Kim, Lee | 2026 | ⭐ First model-free universal RL |
+| 16 | [Solomonoff Induction (critical review)](https://arxiv.org/abs/2603.20274) | Sterkenburg | 2026 | Diagonalization critique of computability claims |
 
 ---
 
@@ -258,6 +313,9 @@ Based on Hutter (2009; [arXiv:0907.0746](https://arxiv.org/abs/0907.0746)) and r
 | **Laurent Orseau** | Google DeepMind | Safe exploration, interruptible agents |
 | **Tom Everitt** | Google DeepMind | AI safety, reward tampering, causal incentives |
 | **Joel Veness** | Google DeepMind | MC-AIXI-CTW implementation |
-| **Cole Wyeth** | ANU | Embeddedness, utility extensions |
+| **Cole Wyeth** | ANU | Embeddedness, utility extensions, value under ignorance |
+| **Yegon Kim** | KAIST | AIQI: first model-free universal AI agent |
+| **Juho Lee** | KAIST | AIQI co-author, distributional RL theory |
+| **Tom F. Sterkenburg** | — | Solomonoff induction critical review |
 | **Michael Cohen** | ANU / Oxford | Imitation learning safety |
 | **Shane Legg** | Google DeepMind (co-founder) | Universal intelligence measure |

@@ -1,7 +1,7 @@
 # Master Paper Index: Causal-RL-Foundations
 
 > Curated bibliography across General RL, Causal Inference in RL, and Mathematical Logic for AI Alignment  
-> Last updated: March 2026 | 80+ papers
+> Last updated: May 2026 | 95+ papers
 
 ---
 
@@ -34,7 +34,8 @@
 | A Direct Approximation of AIXI Using Logical State Abstractions | — | NeurIPS | 2022 | [NeurIPS 2022](https://papers.nips.cc/paper_files/paper/2022/hash/ed91353f700d113e5d848c7e04a858b0-Abstract-Conference.html) |
 | Dynamic Knowledge Injection for AIXI Agents | Yang-Zhao, Ng, Hutter | AAAI | 2024 | [AAAI 2024](https://ojs.aaai.org/index.php/AAAI/article/view/29575) |
 | Self-Predictive Universal AI | Catt, Quarel, Hutter et al. | NeurIPS | 2023 | [NeurIPS 2023](https://proceedings.neurips.cc/paper_files/paper/2023/file/56a225639da77e8f7c0409f6d5ba996b-Paper-Conference.pdf) |
-| A Model-Free Universal AI (AIQI) | Kim, Lee | — | 2026 | [2602.23242](https://arxiv.org/abs/2602.23242) |
+| A Model-Free Universal AI (AIQI) ⭐ | Kim, Lee | — | 2026 | [2602.23242](https://arxiv.org/abs/2602.23242) |
+| Solomonoff Induction (critical review) | Sterkenburg | — | 2026 | [2603.20274](https://arxiv.org/abs/2603.20274) |
 
 ### A4. Modern Universal Agents
 
@@ -103,6 +104,17 @@
 | Fine-Grained Causal Dynamics Learning with Quantization | Hwang et al. | ICML | 2024 | [PMLR](https://proceedings.mlr.press/v235/hwang24b.html) |
 | COREP: Tackling Non-Stationarity via Causal-Origin Representation | Zhang et al. | ICML | 2024 | [PMLR](https://proceedings.mlr.press/v235/zhang24ah.html) |
 | Sequential Causal Games | Bareinboim lab | — | 2025 | [PDF](https://causalai.net/r145.pdf) |
+
+### B7. Causal RL Algorithms (2025–2026)
+
+| Title | Authors | Venue | Year | Link |
+|-------|---------|-------|------|------|
+| Towards Causal Model-Based Policy Optimization (C-MBPO) | — | — | 2025 | [2503.09719](https://arxiv.org/abs/2503.09719) |
+| Causal Flow Q-Learning for Robust Offline RL | Li, Zhang, Bareinboim | ICML | 2026 | [2602.02847](https://arxiv.org/abs/2602.02847) |
+| Counterfactual Shapley Credit Assignment | Li, Lee, Bareinboim | RLC | 2026 | — |
+| Scalable Causal Imitation Learning | Tagor, Li, Bareinboim | RLC | 2026 | — |
+| Causal Identification from Counterfactual Data | Raghavan, Bareinboim | ICML | 2026 | — |
+| Relational Structural Causal Models | Ejaz, Bareinboim | ICML | 2026 | — |
 
 ### B6. Causal RL Surveys
 
@@ -175,6 +187,18 @@
 | Causal Confusion and Reward Misidentification | Tien et al. | ICLR | 2023 | [OpenReview](https://openreview.net/forum?id=R0Xxvr_X3ZA) |
 | AI Alignment: A Comprehensive Survey | Ji et al. | CSUR | 2023 | [2310.19852](https://arxiv.org/abs/2310.19852) |
 
+### C7. Causal Agent Safety & Incentives (2024–2026)
+
+| Title | Authors | Venue | Year | Link |
+|-------|---------|-------|------|------|
+| Measuring Goal-directedness (MEG) ⭐ | MacDermott, Fox, Belardinelli, Everitt | NeurIPS (Spotlight) | 2024 | [2412.04758](https://arxiv.org/abs/2412.04758) |
+| Robust Agents Learn Causal World Models 🏆 | Richens, Everitt | ICLR (Hon. Mention) | 2024 | [2402.10877](https://arxiv.org/abs/2402.10877) |
+| Evaluating the Goal-Directedness of LLMs | Everitt, Garbacea, Bellot, Richens et al. | — | 2025 | [2504.11844](https://arxiv.org/abs/2504.11844) |
+| General Agents Need World Models | Richens, Abel, Bellot, Everitt | ICML | 2025 | [2506.01622](https://arxiv.org/abs/2506.01622) |
+| The Limits of Predicting Agents from Behaviour | Bellot, Richens, Everitt | ICML | 2025 | [2506.02923](https://arxiv.org/abs/2506.02923) |
+| Higher-Order Belief in Incomplete Information MAIDs | Foxabbott, Subramani, Ward | AAMAS | 2025 | [2503.06323](https://arxiv.org/abs/2503.06323) |
+| Human Amplification, Intelligent Agents, and the Aims of AI Research | Jha, Everitt, Grzankowski | IASEAI | 2026 | — |
+
 ---
 
 ## Reading Order Recommendations
@@ -185,6 +209,7 @@
 3. LaVictoire 2015 — Löb's theorem for AI
 4. Hubinger et al. 2019 — Mesa-optimization and deceptive alignment
 5. Bareinboim, Zhang, Lee 2024 — Intro to Causal RL
+6. Kim & Lee 2026 — AIQI (first model-free universal AI, accessible motivation)
 
 ### Theory Track
 1. Hutter 2000 — AIXI foundations
@@ -192,6 +217,8 @@
 3. Demski & Garrabrant 2019 — Embedded agency
 4. Yudkowsky & Soares 2018 — FDT
 5. Leike 2016 — Nonparametric GRL (critique of AIXI optimality)
+6. Wyeth & Hutter 2025 — Embeddedness failures formalization
+7. Sterkenburg 2026 — Solomonoff induction critical review
 
 ### Alignment Track
 1. Everitt et al. 2021 — Reward tampering
@@ -199,6 +226,9 @@
 3. Irving et al. 2018 — AI Safety via Debate
 4. Tien et al. 2023 — Causal confusion and RLHF
 5. Ji et al. 2023 — AI Alignment survey
+6. MacDermott et al. 2024 — Measuring Goal-directedness (MEG)
+7. Everitt et al. 2025 — Evaluating Goal-Directedness of LLMs
+8. Richens & Everitt 2024 — Robust agents learn causal world models
 
 ### Causal RL Algorithms Track
 1. Lu et al. 2020 — C-UCB/C-TS algorithms

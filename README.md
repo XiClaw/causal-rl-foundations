@@ -27,7 +27,8 @@ causal-rl-foundations/
 ├── theory/                       # Deep mathematical notes
 │   ├── aixi_overview.md          # AIXI: formal definition, theorems, approximations, open problems
 │   ├── causal_hierarchy.md       # Pearl's PCH × RL: from causal bandits to CRL framework
-│   └── logic_foundations.md      # Löb, logical induction, FDT, verification, embedded agency
+│   ├── logic_foundations.md      # Löb, logical induction, FDT, verification, embedded agency
+│   └── recent_developments_2025_2026.md  # ⭐ Recent advances summary (2025–2026)
 │
 ├── alignment/                    # Alignment-focused synthesis
 │   ├── alignment_theory.md       # The Alignment Problem: unified formal perspective
@@ -45,8 +46,9 @@ causal-rl-foundations/
 │   └── ocis_seminar.md           # Online Causal Inference Seminar — talks, archive, community
 │
 ├── papers/                       # Literature
-│   ├── master_index.md           # 80+ paper bibliography with links, organized by topic
-│   └── hutter2000_notes.md       # Deep reading notes: Hutter 2000
+│   ├── master_index.md           # 95+ paper bibliography with links, organized by topic
+│   ├── hutter2000_notes.md       # Deep reading notes: Hutter 2000
+│   └── aiqi_notes.md             # ⭐ Deep reading notes: Kim & Lee 2026 (AIQI)
 │
 ├── experiments/                  # Runnable code
 │   ├── causal_bandits.py         # Causal bandit vs standard bandit comparison
@@ -66,18 +68,19 @@ causal-rl-foundations/
 
 | File | Topics Covered | Key Papers Referenced |
 |------|---------------|-----------------------|
-| `theory/aixi_overview.md` | AIXI definition, Solomonoff prior, key theorems, MC-AIXI, Self-AIXI, AIQI (2026), open problems | Hutter 2000–2025, Leike 2016, Veness et al. 2011, Kim & Lee 2026 |
+| `theory/aixi_overview.md` | AIXI definition, Solomonoff prior, key theorems, MC-AIXI, Self-AIXI, AIQI (2026), Value Under Ignorance, Embeddedness Failures, open problems | Hutter 2000–2025, Leike 2016, Veness et al. 2011, Kim & Lee 2026, Wyeth & Hutter 2025 |
 | `theory/causal_hierarchy.md` | PCH layers, CRL framework, causal bandits (C-UCB/C-TS), COMA, causal imitation learning, ACE algorithm, alignment implications | Bareinboim 2024, Lattimore 2016, Lu 2020, Foerster 2018, Tien 2023 |
 | `theory/logic_foundations.md` | Löb's theorem, GL system, logical induction (GIC criterion), FDT vs CDT vs EDT, UDT, embedded agency, neural verification, Goodhart's Law | Garrabrant 2016, Yudkowsky & Soares 2018, Hubinger 2019, α,β-CROWN |
+| `theory/recent_developments_2025_2026.md` | ⭐ Summary of all recent advances: AIQI, Value Under Ignorance, Embeddedness Failures, MEG, LLM Goal-Directedness, Causal AI Book, Solomonoff critique | Kim & Lee 2026, Wyeth & Hutter 2025, Everitt et al. 2025, Sterkenburg 2026, Bareinboim 2026 |
 
 ### Researcher Profiles & Lab Notes
 
 | File | Who | Key Contributions |
 |------|-----|-------------------|
-| `people/marcus_hutter.md` | Marcus Hutter (ANU) | AIXI, Solomonoff induction, Universal Intelligence measure, Hutter Prize, UAI book |
-| `people/judea_pearl.md` | Judea Pearl (UCLA) | Bayesian networks, SCMs, do-calculus, PCH Ladder of Causation, *Causality* book |
-| `people/bareinboim_causalai.md` | Elias Bareinboim (Columbia) | CRL framework, transportability, causal fairness, *Causal AI* book, 30-lecture curriculum |
-| `people/causal_incentives_group.md` | Tom Everitt et al. (DeepMind/Oxford) | Causal Influence Diagrams, goal-directedness, deception, `pycid` tool |
+| `people/marcus_hutter.md` | Marcus Hutter (DeepMind) | AIXI, Solomonoff induction, Universal Intelligence measure, Hutter Prize, UAI book |
+| `people/judea_pearl.md` | Judea Pearl (UCLA) | Bayesian networks, SCMs, do-calculus, PCH Ladder of Causation, *Causality* book, *Coexistence* (2025) |
+| `people/bareinboim_causalai.md` | Elias Bareinboim (Columbia) | CRL framework, transportability, causal fairness, *Causal AI* book (draft), AAAI Fellow, JCI Editor-in-Chief |
+| `people/causal_incentives_group.md` | Tom Everitt et al. (DeepMind) | Causal Influence Diagrams, goal-directedness (MEG), LLM safety evaluation, `pycid` tool |
 | `people/xi_li_logic_ai.md` | Xi Li 李熙 (CSU) | Logic × Universal AI × Causality; courses on AIXI and causal reading group |
 
 ### Alignment Synthesis
@@ -94,7 +97,7 @@ causal-rl-foundations/
 
 ### Paper Index
 
-`papers/master_index.md` — 80+ papers organized across:
+`papers/master_index.md` — 95+ papers organized across:
 - General RL / AIXI (foundations, approximations, exploration, modern agents)
 - Causal RL (bandits, counterfactual learning, causal discovery, imitation)
 - Logic & Alignment (Löb, logical induction, decision theory, verification, safety theory)
@@ -122,10 +125,11 @@ causal-rl-foundations/
 3. `resources/ocis_seminar.md` — live research frontier via weekly talks
 
 **If you want the bleeding edge:**
-- AIXI: Kim & Lee 2026 (AIQI), Wyeth & Hutter 2025 (embeddedness), Hayashi & Takahashi 2025 (variational empowerment)
-- Causal RL: Ji et al. 2024 (ACE), Bareinboim lab 2025 (sequential causal games)
+- AIXI: Kim & Lee 2026 (AIQI), Wyeth & Hutter 2025 (embeddedness), Wyeth & Hutter 2025 (Value Under Ignorance)
+- Causal RL: Ji et al. 2024 (ACE), Bareinboim lab 2025 (sequential causal games), Li et al. 2026 (Causal Flow Q-Learning)
 - Logic: Ahrenbach 2024 (Löb-safe logics), Oesterheld et al. 2023 (bounded inductive rationality)
-- Incentives: Richens & Everitt 2024 (robust agents learn causal world models), Everitt et al. 2024 (measuring goal-directedness)
+- Incentives: MacDermott et al. 2024 (MEG), Everitt et al. 2025 (LLM goal-directedness), Richens & Everitt 2024 (robust agents → causal models)
+- Surveys: `theory/recent_developments_2025_2026.md` for complete overview
 
 ---
 
