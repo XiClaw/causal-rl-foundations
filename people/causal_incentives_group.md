@@ -183,13 +183,16 @@ The working group is **currently not meeting actively**, but research output con
 | **Limits of Predicting Agents from Behaviour** | Bellot, Richens, Everitt | ICML 2025 | Causal transportability characterizes when we can trust black-box agent predictions |
 | **Higher-Order Belief in MAIDs** | Foxabbott, Subramani, Ward | AAMAS 2025 | Multi-Agent Influence Diagrams with subjective and higher-order beliefs |
 | **Human Amplification, Intelligent Agents** | Jha, Everitt, Grzankowski | IASEAI 2026 | New research direction: amplification of human agency for AGI safety |
+| **The Impossibility of Eliciting Latent Knowledge** ⭐ | Friedl, Ward, Rapoport, Everitt, Richens | arXiv Jun 2026 | Uses CIDs to formalize ELK; proves no behavior-only feedback strategy can guarantee an honest agent, even with perfect feedback |
 
 ### Research Direction Shift
 
 Tom Everitt's research focus is evolving from causal incentive theory toward **amplification of human agency** as an AGI safety approach. The IASEAI 2026 paper "Human Amplification, Intelligent Agents, and the Aims of AI Research" marks this new direction — asking not just "how do agents develop incentives?" but "how can we design AI systems that amplify rather than replace human agency?"
 
+The **Impossibility of Eliciting Latent Knowledge** (Jun 2026) extends the CID toolbox to the ELK problem: formalizes observable-vs-latent variables, what it means for an agent to be *honest*, and goal misgeneralisation. Its impossibility theorem — no feedback-based training strategy depending only on behaviour can with certainty produce an honest agent, even with perfect feedback during training — is a landmark negative result for safety-by-feedback approaches.
+
 ### From Theory to Empirics
 
 A notable trend: the causal incentives program is moving from pure theory (CIDs, path-specific objectives) to empirical evaluation (MEG framework, LLM goal-directedness assessment). This operationalizes the earlier theoretical work and opens the door to practical safety evaluations.
 
-→ *Full developments*: `theory/recent_developments_2025_2026.md`
+→ *Full developments*: `theory/recent_developments_2025_2026.md` + `theory/recent_developments_2026_h2.md`

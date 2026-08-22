@@ -28,7 +28,8 @@ causal-rl-foundations/
 │   ├── aixi_overview.md          # AIXI: formal definition, theorems, approximations, open problems
 │   ├── causal_hierarchy.md       # Pearl's PCH × RL: from causal bandits to CRL framework
 │   ├── logic_foundations.md      # Löb, logical induction, FDT, verification, embedded agency
-│   └── recent_developments_2025_2026.md  # ⭐ Recent advances summary (2025–2026)
+│   └── recent_developments_2025_2026.md  # ⭐ Recent advances (2025–May 2026)
+│   └── recent_developments_2026_h2.md     # ⭐ Recent advances (May–Aug 2026)
 │
 ├── alignment/                    # Alignment-focused synthesis
 │   ├── alignment_theory.md       # The Alignment Problem: unified formal perspective
@@ -46,7 +47,7 @@ causal-rl-foundations/
 │   └── ocis_seminar.md           # Online Causal Inference Seminar — talks, archive, community
 │
 ├── papers/                       # Literature
-│   ├── master_index.md           # 95+ paper bibliography with links, organized by topic
+│   ├── master_index.md           # 110+ paper bibliography with links, organized by topic
 │   ├── hutter2000_notes.md       # Deep reading notes: Hutter 2000
 │   └── aiqi_notes.md             # ⭐ Deep reading notes: Kim & Lee 2026 (AIQI)
 │
@@ -72,6 +73,7 @@ causal-rl-foundations/
 | `theory/causal_hierarchy.md` | PCH layers, CRL framework, causal bandits (C-UCB/C-TS), COMA, causal imitation learning, ACE algorithm, alignment implications | Bareinboim 2024, Lattimore 2016, Lu 2020, Foerster 2018, Tien 2023 |
 | `theory/logic_foundations.md` | Löb's theorem, GL system, logical induction (GIC criterion), FDT vs CDT vs EDT, UDT, embedded agency, neural verification, Goodhart's Law | Garrabrant 2016, Yudkowsky & Soares 2018, Hubinger 2019, α,β-CROWN |
 | `theory/recent_developments_2025_2026.md` | ⭐ Summary of all recent advances: AIQI, Value Under Ignorance, Embeddedness Failures, MEG, LLM Goal-Directedness, Causal AI Book, Solomonoff critique | Kim & Lee 2026, Wyeth & Hutter 2025, Everitt et al. 2025, Sterkenburg 2026, Bareinboim 2026 |
+| `theory/recent_developments_2026_h2.md` | ⭐ Summary of May–Aug 2026: From AGI to ASI, Embedded Universal Predictive Intelligence, formal CRL survey, Counterfactual Shapley (φ-PPO), ELK Impossibility, Universal AI as Imitation | Genewein et al. 2026, Meulemans et al. 2025, Bareinboim 2026, Everitt 2026, Ortega 2026 |
 
 ### Researcher Profiles & Lab Notes
 
@@ -97,8 +99,8 @@ causal-rl-foundations/
 
 ### Paper Index
 
-`papers/master_index.md` — 95+ papers organized across:
-- General RL / AIXI (foundations, approximations, exploration, modern agents)
+`papers/master_index.md` — 110+ papers organized across:
+- General RL / AIXI (foundations, approximations, exploration, modern agents, road to ASI)
 - Causal RL (bandits, counterfactual learning, causal discovery, imitation)
 - Logic & Alignment (Löb, logical induction, decision theory, verification, safety theory)
 
@@ -126,10 +128,11 @@ causal-rl-foundations/
 
 **If you want the bleeding edge:**
 - AIXI: Kim & Lee 2026 (AIQI), Wyeth & Hutter 2025 (embeddedness), Wyeth & Hutter 2025 (Value Under Ignorance)
-- Causal RL: Ji et al. 2024 (ACE), Bareinboim lab 2025 (sequential causal games), Li et al. 2026 (Causal Flow Q-Learning)
+- Universal AI → ASI: Genewein et al. 2026 (From AGI to ASI), Meulemans et al. 2025 (Embedded Universal Predictive Intelligence), Ortega 2026 (Universal AI as Imitation)
+- Causal RL: Ji et al. 2024 (ACE), Bareinboim lab 2025 (sequential causal games), Li et al. 2026 (Causal Flow Q-Learning, Counterfactual Shapley φ-PPO), Bareinboim 2026 (formal CRL survey)
 - Logic: Ahrenbach 2024 (Löb-safe logics), Oesterheld et al. 2023 (bounded inductive rationality)
-- Incentives: MacDermott et al. 2024 (MEG), Everitt et al. 2025 (LLM goal-directedness), Richens & Everitt 2024 (robust agents → causal models)
-- Surveys: `theory/recent_developments_2025_2026.md` for complete overview
+- Incentives: MacDermott et al. 2024 (MEG), Everitt et al. 2025 (LLM goal-directedness), Friedl et al. 2026 (Impossibility of Eliciting Latent Knowledge), Richens & Everitt 2024 (robust agents → causal models)
+- Surveys: `theory/recent_developments_2025_2026.md` + `theory/recent_developments_2026_h2.md` for complete overview
 
 ---
 

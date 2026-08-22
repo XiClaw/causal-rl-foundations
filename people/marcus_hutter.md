@@ -223,9 +223,15 @@ Wyeth & Hutter produced two significant papers in 2025:
 1. **Value Under Ignorance** (AGI 2025): Extends AIXI to general utility functions. Uses Choquet integrals from imprecise probability theory to handle the semimeasure loss ambiguity. Recovers standard value function as special case; proves most general death-interpretation cannot be characterized by Choquet integrals.
 2. **Formalizing Embeddedness Failures** (arXiv 2025): First rigorous formalization and proof that AIXI fails as an embedded agent. Addresses self-reference, Cartesian boundary, and infinite computation failures. Evaluates progress toward embedded agency theories.
 
-**AIQI (Kim & Lee, Feb 2026)**:
-While not directly co-authored by Hutter, AIQI (the first model-free universal AI agent) is a direct descendant of the AIXI research program. It performs universal induction over distributional Q-functions and proves asymptotic optimality without requiring an explicit environment model.
+**AIQI (Kim & Lee, Feb 2026; append Jul 2026)**:
+While not directly co-authored by Hutter, AIQI (the first model-free universal AI agent) is a direct descendant of the AIXI research program. It performs universal induction over distributional Q-functions and proves asymptotic optimality without requiring an explicit environment model. The Jul 2026 update (arXiv:2603.04277) additionally proves Self-AIXI's asymptotic ε-optimality without ad-hoc assumptions.
+
+**From AGI to ASI (DeepMind, Jun 2026)**:
+Hutter is a co-author of this landmark DeepMind roadmap report (arXiv:2606.12683), alongside Shane Legg, Tim Genewein, Thore Graepel et al. The report explicitly uses **Universal AI (AIXI)** as the theoretical endpoint of the intelligence continuum, and maps four paths from AGI to ASI (scaling, paradigm shifts, recursive improvement, multi-agent collectives). This marks AIXI's canonical status in mainstream industry discussion.
+
+**Embedded Universal Predictive Intelligence (Google, Nov 2025)**:
+Hutter is also a co-author (with Manyika, Agüera y Arcas, Sacramento et al.) of this multi-agent embedded agency framework (arXiv:2511.22226). It centers self-prediction, extends AIXI to embedded multi-agent settings, and shows Solomonoff-prior agents can achieve *infinite-order theory of mind*.
 
 **Current affiliation**: Hutter is now at Google DeepMind, continuing work at the intersection of universal AI theory, AI safety, and practical RL.
 
-→ *Full developments*: `theory/recent_developments_2025_2026.md`
+→ *Full developments*: `theory/recent_developments_2025_2026.md` (§ recent_developments_2026_h2.md for May–Aug 2026)

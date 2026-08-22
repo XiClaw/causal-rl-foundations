@@ -242,5 +242,9 @@ Pearl's framework is the **theoretical foundation** of this repository:
 - Pearl, J., Glymour, M., & Jewell, N.P. (2016). *Causal Inference in Statistics: A Primer*. Wiley.
 - Pearl, J. (2018). *Theoretical Impediments to Machine Learning with Seven Sparks from the Causal Revolution*. arXiv.
 - Pearl, J. (2025). *Coexistence and Other Fighting Words: Selected Writings of Judea Pearl, 2002–2025*. (Non-technical; collected writings on Israel, Zionism, and antisemitism)
+- Pearl, J. & Mackenzie, D. (2026). *The Book of Why, 2nd Edition*. Forthcoming (UCLA Tech Report R-536 preface, Oct 2025).
+- Cheng, T., Mao, R., Pearl, J., & Li, A. (2026). *General Sample Size Analysis for Probabilities of Causation: A Delta Method Approach*. arXiv:2602.17070. (→ submit NeurIPS)
+- Wang, S., Sun, Y., Pearl, J., & Li, A. (2026). *Learning Probabilities of Causation with Mask-Augmented Data*. UCLA R-539. (→ submit NeurIPS)
+- Mueller, S. & Pearl, J. (2025/2026). *Personalized Decision Making with Counterfactuals* (R-538) and *Bayesian Discrimination of Response-Type Models* (R-537).
 - Homepage: https://bayes.cs.ucla.edu/jp_home.html
 - "What I'm Up To": https://bayes.cs.ucla.edu/home.htm

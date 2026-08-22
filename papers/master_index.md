@@ -1,7 +1,7 @@
 # Master Paper Index: Causal-RL-Foundations
 
 > Curated bibliography across General RL, Causal Inference in RL, and Mathematical Logic for AI Alignment  
-> Last updated: May 2026 | 95+ papers
+> Last updated: August 2026 | 110+ papers
 
 ---
 
@@ -45,6 +45,18 @@
 | Universal AI maximizes Variational Empowerment | Hayashi, Takahashi | — | 2025 | [2502.15820](https://arxiv.org/abs/2502.15820) |
 | Formalizing Embeddedness Failures in Universal AI | Wyeth, Hutter | — | 2025 | [2505.17882](https://arxiv.org/abs/2505.17882) |
 | Value Under Ignorance in Universal AI | Wyeth, Hutter | AGI | 2025 | [2512.17086](https://arxiv.org/abs/2512.17086) |
+| Embedded Universal Predictive Intelligence | Meulemans, Nasser, ..., Hutter, Manyika, Agüera y Arcas et al. (Google) | — | 2025 | [2511.22226](https://arxiv.org/abs/2511.22226) |
+| Self-AIXI asymptotic optimality (AIQI append) | Kim, Lee | — | 2026 | [2603.04277](https://arxiv.org/abs/2603.04277) |
+
+### A5. Universal Intelligence & the Road to ASI
+
+| Title | Authors | Venue | Year | Link |
+|-------|---------|-------|------|------|
+| From AGI to ASI ⭐ | Genewein, Franklin, ..., Hutter, Graepel, Legg (DeepMind) | — | 2026 | [2606.12683](https://arxiv.org/abs/2606.12683) |
+| Universal AI as Imitation | Ortega | TR | 2026 | [pedroortega.org/uiai](https://pedroortega.org/uiai) |
+| On Solomonoff Induction in LLMs & Limits of Self-Improving | Zenil | — | 2026 | [2601.05280](https://arxiv.org/abs/2601.05280) |
+| Hierarchical Solomonoff Induction | — | — | 2026 | [2608.01005](https://arxiv.org/abs/2608.01005) |
+| Complexity-Theoretic Universal Inductive Inference | Hirahara, Nanashima | ECCC | 2026 | [TR25-092](https://eccc.weizmann.ac.il/report/2025/092) |
 
 ---
 
@@ -115,6 +127,8 @@
 | Scalable Causal Imitation Learning | Tagor, Li, Bareinboim | RLC | 2026 | — |
 | Causal Identification from Counterfactual Data | Raghavan, Bareinboim | ICML | 2026 | — |
 | Relational Structural Causal Models | Ejaz, Bareinboim | ICML | 2026 | — |
+| Confounding Robust Continuous Control via Automatic Reward Shaping | Juliani, Li, Bareinboim | — | 2026 | [2602.10305](https://arxiv.org/abs/2602.10305) |
+| Causal Gaussian Processes for Robust Treatment Effect | Zhang, Chen, Bareinboim | — | 2026 | [2606.21809](https://arxiv.org/abs/2606.21809) |
 
 ### B6. Causal RL Surveys
 
@@ -123,6 +137,7 @@
 | Causal Reinforcement Learning: A Survey | Deng, Jiang, Long, Zhang | TMLR | 2023 | [2307.01452](https://arxiv.org/abs/2307.01452) |
 | A Survey on Causal Reinforcement Learning | Zeng et al. | TNNLS | 2024 | [IEEE](https://ieeexplore.ieee.org/abstract/document/10771589) |
 | An Introduction to Causal Reinforcement Learning | Bareinboim, Zhang, Lee | Tech Report | 2024 | [PDF](https://www.causalai.net/r65.pdf) |
+| An Introduction to Causal Reinforcement Learning (formal survey ⭐) | Bareinboim, Zhang, Lee | — | 2026 | [2606.24160](https://arxiv.org/abs/2606.24160) |
 | Causal Multi-Agent RL: Review and Open Problems | — | — | 2021 | [2111.06721](https://arxiv.org/abs/2111.06721) |
 | Algorithms for Causal Reasoning in Probability Trees | Genewein et al. (DeepMind) | — | 2020 | [2010.12237](https://arxiv.org/abs/2010.12237) |
 
@@ -198,6 +213,7 @@
 | The Limits of Predicting Agents from Behaviour | Bellot, Richens, Everitt | ICML | 2025 | [2506.02923](https://arxiv.org/abs/2506.02923) |
 | Higher-Order Belief in Incomplete Information MAIDs | Foxabbott, Subramani, Ward | AAMAS | 2025 | [2503.06323](https://arxiv.org/abs/2503.06323) |
 | Human Amplification, Intelligent Agents, and the Aims of AI Research | Jha, Everitt, Grzankowski | IASEAI | 2026 | — |
+| The Impossibility of Eliciting Latent Knowledge ⭐ | Friedl, Ward, Rapoport, Everitt, Richens | — | 2026 | [2606.12268](https://arxiv.org/abs/2606.12268) |
 
 ---
 

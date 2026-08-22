@@ -184,8 +184,21 @@ The book *Causal Artificial Intelligence* is essentially a textbook for this rep
 | Causal Identification from Counterfactual Data | ICML 2026 | Completeness and bounding results for identification from counterfactual data |
 | Causal Flow Q-Learning for Robust Offline RL | ICML 2026 | Addresses confounding bias in offline RL using flow-matching policies |
 | Relational Structural Causal Models | ICML 2026 | Extends SCMs to relational/structured domains |
-| Counterfactual Shapley Credit Assignment | RLC 2026 | Causal multi-agent credit assignment via Shapley values |
+| Counterfactual Shapley Credit Assignment (φ-PPO) | RLC 2026 | Causal multi-agent credit assignment via counterfactual Shapley values |
 | Scalable Causal Imitation Learning | RLC 2026 | Practical causal imitation learning at scale |
+| Confounding Robust Continuous Control via Automatic Reward Shaping | 2026 | [2602.10305](https://arxiv.org/abs/2602.10305) |
+| Causal Gaussian Processes for Robust Treatment Effect | 2026 | [2606.21809](https://arxiv.org/abs/2606.21809) |
+
+### Formal CRL Survey (Jun 2026) ⭐
+
+**Bareinboim, Zhang & Lee — *An Introduction to Causal Reinforcement Learning*** ([arXiv:2606.24160](https://arxiv.org/abs/2606.24160)).
+
+升级早前 2024 技术报告 (r65) 的出版级正式综述版本。核心论证：
+- 因果推断与 RL 作用在共同建块——**反事实关系**——的不同方面
+- 任何 RL 环境可分解为具不同因果不变性的自主机制集合，简约建模为 **SCM**；标准 RL 隐式编码了该模型
+- 统一处理：在线学习、离线策略学习、因果演算学习
+- 引入新任务范式：**广义策略学习、干预位置选择、模仿学习、反事实学习**
+- 这标志 Causal RL 从概念走向完整学科建制
 
 ### Major Milestones (2025–2026)
 
@@ -195,7 +208,7 @@ The book *Causal Artificial Intelligence* is essentially a textbook for this rep
 - **Causal AI Book**: Draft online at [causalai-book.net](https://causalai-book.net/) — comprehensive textbook systematizing the field
 - **Lab pipeline**: 14 active PhD students/postdocs; alumni placed at UCLA, UIUC, SNU, Google DeepMind, Amazon
 
-→ *Full developments*: `theory/recent_developments_2025_2026.md`
+→ *Full developments*: `theory/recent_developments_2025_2026.md` + `theory/recent_developments_2026_h2.md`
 
 ---
 

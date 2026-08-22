@@ -120,24 +120,40 @@ All past talks recorded and publicly available:
 
 ---
 
-## Spring 2026 Schedule (Recent & Upcoming)
+## Spring 2026 Schedule (Completed)
 
 | Date | Speaker (Institution) | Topic |
 |------|----------------------|-------|
-| May 19 | Naoki Egami (MIT) | Conformal Policy Learning with Distribution-Free Safety Guarantees: Application to AI-Powered Interventions |
-| May 26 | TBA | OCIS + Isaac Newton Institute (INI) Joint Webinar |
-| Jun 2 | Suhas Vijaykumar (UCSD) | Demonstration Experiments: formalizing "at least one treatment works" and adaptive inference |
-| Jun 9 | Yixin Wang (Michigan) | OCIS + INI Joint Webinar |
-| Jun 16 | TBA | OCIS + INI Joint Webinar |
-| Jun 23 | Falco Bargagli Stoffi (UCLA) | Causal Stability Selection: controlling false discoveries with finite-sample guarantees |
+| Feb 3 | — | Non-overlap Average Treatment Effect Bounds (Young Researchers' Seminar) |
+| Feb 3 | Juraj Bodík (Lausanne) | Causality and Extreme Events: Why Additive Models Can Be Dangerous |
+| Feb 10 | Lin Liu (SJTU) | Method-of-moments, U-statistics, and high-dimensional GLMs |
+| Feb 17 | — | Average Causal Effect Estimation in DAGs with Hidden Variables (YRS) |
+| Feb 17 | Catharina Stoltenberg (Oslo) | Single-world exchangeability conditions |
+| Feb 24 | — | A theory of causality with multiple interventions |
+| Mar 3 | — | Causal effects conditional on post-treatment variables |
+| Mar 10 | — | Policy relevance of causal quantities in networks |
+| Mar 17 | — | Nuisance Parameter Tuning for Doubly Robust Functionals |
+| Mar 24 | — | Policy Learning with Unobserved Heterogeneity (YRS) |
+| Apr 7 | — | **Causal Inference as a Logical Problem** (Discussant: Jiji Zhang, CUHK) |
+| Apr 14 | — | Causal Estimation under Slow Nuisance Rates |
+| Apr 21 | — | Panel discussion (joint with INI) |
+| Apr 28 | — | Beyond identifiability in causal representation learning |
+| May 5 | Chan Park (UIUC) | Distributional Balancing for Causal Inference |
+| May 12 | Fan Xia (UCSF) & Gary Chan (UW) | Robust Semiparametric Inference for Stepped Wedge Design |
+| May 19 | Naoki Egami (MIT) | Conformal Policy Learning with Distribution-Free Safety Guarantees |
+| May 26 | — | Rothschild Public Lecture: Forty years of causal inference |
+| Jun 2 | Suhas Vijaykumar (UCSD) | Demonstration Experiments |
+| Jun 9 | — | Causal inference with unstructured data |
+| Jun 16 | — | Instrumental Variable Analysis Without Structural Equations |
 
-**All seminars**: Tuesdays, 8:30 AM Pacific / 11:30 AM Eastern / 3:30 PM UTC / 11:30 PM Beijing.  
-**Zoom**: Meeting ID 968 8371 7451, Passcode 414559  
-**Mailing list**: [Subscribe](https://mailman.stanford.edu/mailman/listinfo/online-causal-inference-seminar)
+**Summer recess — will resume in Fall 2026.**
 
-**Highlight (May 19)**: Egami's talk on "Conformal Policy Learning" addresses a critical practical problem — how to safely deploy generative AI interventions with finite-sample safety guarantees (e.g., ensuring <1% probability of harm to any individual).
+**All seminars**: Tuesdays, 8:30 AM Pacific / 11:30 AM Eastern / 3:30 PM UTC / 11:30 PM Beijing.
+**Slack**: Subscribe to the [mailing list](https://mailman.stanford.edu/mailman/listinfo/online-causal-inference-seminar) for Zoom details and Fall 2026 announcements.
 
-→ *Full developments*: `theory/recent_developments_2025_2026.md`
+**Highlight (Apr 7)**: "Causal Inference as a Logical Problem" — with Jiji Zhang (CUHK) as discussant, this talk connects causal inference directly to mathematical logic, aligning with this repository's Logic × Causality theme.
+
+→ *Full developments*: `theory/recent_developments_2025_2026.md` + `theory/recent_developments_2026_h2.md`
 - Recommended starting talks: search for speakers like Imbens, Athey, Wager, Magliacane, Peters
 
 ### Mailing List
