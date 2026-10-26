@@ -1,7 +1,7 @@
 # Master Paper Index: Causal-RL-Foundations
 
 > Curated bibliography across General RL, Causal Inference in RL, and Mathematical Logic for AI Alignment  
-> Last updated: August 2026 | 110+ papers
+> Last updated: October 2026 | 114+ papers
 
 ---
 
@@ -140,6 +140,17 @@
 | An Introduction to Causal Reinforcement Learning (formal survey ⭐) | Bareinboim, Zhang, Lee | — | 2026 | [2606.24160](https://arxiv.org/abs/2606.24160) |
 | Causal Multi-Agent RL: Review and Open Problems | — | — | 2021 | [2111.06721](https://arxiv.org/abs/2111.06721) |
 | Algorithms for Causal Reasoning in Probability Trees | Genewein et al. (DeepMind) | — | 2020 | [2010.12237](https://arxiv.org/abs/2010.12237) |
+
+---
+
+### B8. Teleological Inference & Identification (2026)
+
+| Title | Authors | Venue | Year | Link |
+|-------|---------|-------|------|------|
+| Reasoning Models Are Accurate but Unsound on Identification | Behnam, Wang | — | 2026 | [2610.03519](https://arxiv.org/abs/2610.03519) |
+| Teleological Inference | Claessens | Philosophy and Phenomenological Research | 2026 | — |
+| Teleological Inference in Structural Causal Models via Intentional Interventions | Compagno, Zennaro | — | 2026 | [2603.18968](https://arxiv.org/abs/2603.18968) |
+| The Same Model Needed Two Different Causal Equations | Freelancer | Medium | 2026 | [Medium](https://medium.com/@freelancer1114/the-same-model-needed-two-different-causal-equations-6667e300c8ca) |
 
 ---
 

@@ -29,7 +29,8 @@ causal-rl-foundations/
 │   ├── causal_hierarchy.md       # Pearl's PCH × RL: from causal bandits to CRL framework
 │   ├── logic_foundations.md      # Löb, logical induction, FDT, verification, embedded agency
 │   └── recent_developments_2025_2026.md  # ⭐ Recent advances (2025–May 2026)
-│   └── recent_developments_2026_h2.md     # ⭐ Recent advances (May–Aug 2026)
+│   ├── recent_developments_2026_h2.md     # ⭐ Recent advances (May–Aug 2026)
+│   └── recent_developments_2026_autumn.md # ⭐ Recent advances (Sep–Oct 2026)
 │
 ├── alignment/                    # Alignment-focused synthesis
 │   ├── alignment_theory.md       # The Alignment Problem: unified formal perspective
