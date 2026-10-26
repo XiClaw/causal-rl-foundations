@@ -1,7 +1,7 @@
 # Master Paper Index: Causal-RL-Foundations
 
 > Curated bibliography across General RL, Causal Inference in RL, and Mathematical Logic for AI Alignment  
-> Last updated: October 2026 | 114+ papers
+> Last updated: October 2026 | 154+ papers
 
 ---
 
@@ -57,6 +57,21 @@
 | On Solomonoff Induction in LLMs & Limits of Self-Improving | Zenil | — | 2026 | [2601.05280](https://arxiv.org/abs/2601.05280) |
 | Hierarchical Solomonoff Induction | — | — | 2026 | [2608.01005](https://arxiv.org/abs/2608.01005) |
 | Complexity-Theoretic Universal Inductive Inference | Hirahara, Nanashima | ECCC | 2026 | [TR25-092](https://eccc.weizmann.ac.il/report/2025/092) |
+
+### A6. Universal Induction & Algorithmic Information Theory (2026)
+
+| Title | Authors | Venue | Year | Link |
+|-------|---------|-------|------|------|
+| Solomonoff Induction and Singular Integrals | Troiani, Murfet | — | 2026 | [2609.01666](https://arxiv.org/abs/2609.01666) |
+| Approximate Solomonoff Induction: On the Robustness of Learned Universal Predictors | Li, Teng | — | 2026 | [2610.29289](https://arxiv.org/abs/2610.29289) |
+| Solomonoff induction of selected bits and online classification | Bauwens, Kuznetsov | — | 2026 | [2610.18632](https://arxiv.org/abs/2610.18632) |
+| Artificiality's First Exam: An LLM-Referenced C-test for Supraintelligence | Hernandez-Orallo | — | 2026 | [2610.14005](https://arxiv.org/abs/2610.14005) |
+| Bayesian Intelligence from the Outside | Smolin, Wilder | — | 2026 | [2609.14724](https://arxiv.org/abs/2609.14724) |
+| Prediction Under Imperfect Compression: A Theory of Approximate MDL | Li, Mao, Teng, Yang | — | 2026 | [2606.04834](https://arxiv.org/abs/2606.04834) |
+| Towards a Category-theoretic Comparative Framework for Artificial General Intelligence | de los Riscos, Corbacho, Arbib | — | 2026 | [2603.28906](https://arxiv.org/abs/2603.28906) |
+| The Value of a Prompt: An LLM-Relative Kolmogorov-Complexity Approach | Pass | — | 2026 | [2608.16438](https://arxiv.org/abs/2608.16438) |
+| Universal Individual-Sequence Prediction with a Primitive-Recursive Superpredictor | Leshem | — | 2026 | [2607.25712](https://arxiv.org/abs/2607.25712) |
+| Can Complexity and Uncomputability Explain Intelligence? SuperARC | Hernández-Espinosa et al. | — | 2026 | [2503.16743](https://arxiv.org/abs/2503.16743) |
 
 ---
 
@@ -129,6 +144,17 @@
 | Relational Structural Causal Models | Ejaz, Bareinboim | ICML | 2026 | — |
 | Confounding Robust Continuous Control via Automatic Reward Shaping | Juliani, Li, Bareinboim | — | 2026 | [2602.10305](https://arxiv.org/abs/2602.10305) |
 | Causal Gaussian Processes for Robust Treatment Effect | Zhang, Chen, Bareinboim | — | 2026 | [2606.21809](https://arxiv.org/abs/2606.21809) |
+| Counterfactual Rollouts for Offline Contrastive Goal-Conditioned Reinforcement Learning (CauCRL) | Huang, Bo, Zhang | — | 2026 | [2610.14953](https://arxiv.org/abs/2610.14953) |
+| Counterfactual Debugging the World Model Transfer Gap | Li, Lee, Dennis, Bareinboim | NeurIPS | 2026 | [PDF](https://mingxuan.me/assets/papers/ctf_debugging.pdf) |
+| Temporal-Causal Inference for Reinforcement Learning via Automata Learning (TCIRL) | Corazza et al. | CDC | 2026 | [2609.07461](https://arxiv.org/abs/2609.07461) |
+| Learning in Causal Markov Games | Maiti, Bareinboim | NeurIPS | 2026 | — |
+| Minimax Optimal Regret for Causal Logistic Bandits with Counterfactual Fairness | Huh, Bae, Lee | — | 2026 | [2610.01377](https://arxiv.org/abs/2610.01377) |
+| The Minimal Search Space for Conditional Causal Bandits | Simoes et al. | UAI | 2026 | [2502.06577](https://arxiv.org/abs/2502.06577) |
+| Learning Implicit Causal World Models from Multi-Agent Demonstrations | Ghosh | — | 2026 | [2607.26336](https://arxiv.org/abs/2607.26336) |
+| Factored Causal Representation Learning for Robust Reward Modeling in RLHF | Yang et al. | — | 2026 | [2601.21350](https://arxiv.org/abs/2601.21350) |
+| Causal Imitation Learning under Expert-Observable and Expert-Unobservable Confounding (DML-IL) | Shao, Buening, Kwiatkowska | ICLR | 2026 | [2502.07656](https://arxiv.org/abs/2502.07656) |
+| Can World and Action Modeling Benefit Each Other under Unified Causal Training? (OneWM) | Su et al. | — | 2026 | [2610.21095](https://arxiv.org/abs/2610.21095) |
+
 
 ### B6. Causal RL Surveys
 
@@ -151,6 +177,16 @@
 | Teleological Inference | Claessens | Philosophy and Phenomenological Research | 2026 | — |
 | Teleological Inference in Structural Causal Models via Intentional Interventions | Compagno, Zennaro | — | 2026 | [2603.18968](https://arxiv.org/abs/2603.18968) |
 | The Same Model Needed Two Different Causal Equations | Freelancer | Medium | 2026 | [Medium](https://medium.com/@freelancer1114/the-same-model-needed-two-different-causal-equations-6667e300c8ca) |
+| ACED-Bench: Evaluating How LLM Agents Acquire and Act on Causal Evidence | Chen et al. | — | 2026 | [2610.14381](https://arxiv.org/abs/2610.14381) |
+| Active Causal Discovery Benchmark: Evaluating LLM Agents Under Budgeted Interventions (ACDB) | Deb, Shah, Krishnan | — | 2026 | [2609.31675](https://arxiv.org/abs/2609.31675) |
+| Benchmarking and Enhancing Agentic Causal Discovery (Heuresis) | Ma, Ding, Wang | — | 2026 | [2610.22846](https://arxiv.org/abs/2610.22846) |
+| When Harnesses Lose the Signal: Causal Evaluation of Recovery in LLM Agents | Xiao et al. | — | 2026 | [2610.00372](https://arxiv.org/abs/2610.00372) |
+| Project Ariadne: A Structural Causal Framework for Auditing Faithfulness in LLM Agents | Khanzadeh | — | 2026 | [2601.02314](https://arxiv.org/abs/2601.02314) |
+| CausalFlip: A Benchmark for LLM Causal Judgment Beyond Semantic Matching | Wang, Zhu, Li | — | 2026 | [2602.20094](https://arxiv.org/abs/2602.20094) |
+| Benchmarking LLM Causal Reasoning with Scientifically Validated Relationships (EconCausal) | Lee et al. | — | 2026 | [2510.07231](https://arxiv.org/abs/2510.07231) |
+| Counterfactual Sensitivity for Faithful Reasoning in Language Models (CSR) | Shihab, Akter, Sharma | — | 2026 | [2509.01544](https://arxiv.org/abs/2509.01544) |
+| LLM-Augmented Causal Discovery: Probabilistic Fusion of Edge Existence and Orientation | Kitson, Constantinou | — | 2026 | [2608.27472](https://arxiv.org/abs/2608.27472) |
+| DCFA: Dual-view Causal-inspired Attribution for Failure Reasoning in LLM-based Multi-agent Systems | Wang et al. | — | 2026 | [2609.04749](https://arxiv.org/abs/2609.04749) |
 
 ---
 
@@ -225,6 +261,17 @@
 | Higher-Order Belief in Incomplete Information MAIDs | Foxabbott, Subramani, Ward | AAMAS | 2025 | [2503.06323](https://arxiv.org/abs/2503.06323) |
 | Human Amplification, Intelligent Agents, and the Aims of AI Research | Jha, Everitt, Grzankowski | IASEAI | 2026 | — |
 | The Impossibility of Eliciting Latent Knowledge ⭐ | Friedl, Ward, Rapoport, Everitt, Richens | — | 2026 | [2606.12268](https://arxiv.org/abs/2606.12268) |
+| Training Natural Schemers: RL Can Amplify Oversight-Conditional Behavior ⭐ | Jaworski et al. | — | 2026 | [2610.26551](https://arxiv.org/abs/2610.26551) |
+| LLM Agents Can Easily Tamper With Their Own Traces | Qin et al. | — | 2026 | [2609.30266](https://arxiv.org/abs/2609.30266) |
+| Auditing Harness Tampering in Self-Improving Agents | Wang, Zhang, Shao | — | 2026 | [2609.00069](https://arxiv.org/abs/2609.00069) |
+| Gradient Routing Localizes and Removes Unintended Behaviors in RL (GRAFT) | Ward et al. | — | 2026 | [2610.17062](https://arxiv.org/abs/2610.17062) |
+| Towards Robust Model Organisms for Eliciting Latent Knowledge | Finke et al. | — | 2026 | [2610.26698](https://arxiv.org/abs/2610.26698) |
+| AI Models Can Provably Hide Arbitrary Capabilities | Draguns et al. | NeurIPS | 2026 | [2610.13928](https://arxiv.org/abs/2610.13928) |
+| Reward Hacking as Equilibrium under Finite Evaluation | Wang, Huang | — | 2026 | [2603.28063](https://arxiv.org/abs/2603.28063) |
+| RewardHackingAgents: Benchmarking Evaluation Integrity for LLM ML-Engineering Agents | Atinafu, Cohen | — | 2026 | [2603.11337](https://arxiv.org/abs/2603.11337) |
+| Intra-Rubric Reward Divergence: Mitigating Rubric Hacking through Latent Dimension Recovery and Balancing | Xia, Xu, Shi | — | 2026 | [2610.26685](https://arxiv.org/abs/2610.26685) |
+| A Behavioural and Representational Evaluation of Goal-Directedness in Language Model Agents | Arghal et al. | — | 2026 | [2602.08964](https://arxiv.org/abs/2602.08964) |
+
 
 ---
 

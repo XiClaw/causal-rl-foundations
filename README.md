@@ -48,7 +48,7 @@ causal-rl-foundations/
 │   └── ocis_seminar.md           # Online Causal Inference Seminar — talks, archive, community
 │
 ├── papers/                       # Literature
-│   ├── master_index.md           # 110+ paper bibliography with links, organized by topic
+│   ├── master_index.md           # 150+ paper bibliography with links, organized by topic
 │   ├── hutter2000_notes.md       # Deep reading notes: Hutter 2000
 │   └── aiqi_notes.md             # ⭐ Deep reading notes: Kim & Lee 2026 (AIQI)
 │
@@ -100,7 +100,7 @@ causal-rl-foundations/
 
 ### Paper Index
 
-`papers/master_index.md` — 110+ papers organized across:
+`papers/master_index.md` — 150+ papers organized across:
 - General RL / AIXI (foundations, approximations, exploration, modern agents, road to ASI)
 - Causal RL (bandits, counterfactual learning, causal discovery, imitation)
 - Logic & Alignment (Löb, logical induction, decision theory, verification, safety theory)
