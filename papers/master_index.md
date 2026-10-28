@@ -47,6 +47,7 @@
 | Value Under Ignorance in Universal AI | Wyeth, Hutter | AGI | 2025 | [2512.17086](https://arxiv.org/abs/2512.17086) |
 | Embedded Universal Predictive Intelligence | Meulemans, Nasser, ..., Hutter, Manyika, Agüera y Arcas et al. (Google) | — | 2025 | [2511.22226](https://arxiv.org/abs/2511.22226) |
 | Self-AIXI asymptotic optimality (AIQI append) | Kim, Lee | — | 2026 | [2603.04277](https://arxiv.org/abs/2603.04277) |
+| MaD-RSI: Model-as-Data for Recursive Self-Improvement of Agent Harnesses | Cui et al. | — | 2026 | [2610.28201](https://arxiv.org/abs/2610.28201) |
 
 ### A5. Universal Intelligence & the Road to ASI
 
